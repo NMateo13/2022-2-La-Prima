@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="480.0" minWidth="640.0" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.graficadora_2.controllers.GraficadoraController">
+   <bottom>
+      <GridPane maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="640.0" prefHeight="50.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="200.0" prefWidth="1090.4000244140625" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="50.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="50.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="1.7976931348623157E308" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField id="texto" fx:id="texto" alignment="CENTER" maxWidth="1.7976931348623157E308" minWidth="200.0" onKeyReleased="#dibujar" onKeyTyped="#detectarTexto" prefHeight="30.0" prefWidth="1082.0" promptText="Ingrese la palabra " GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <ColorPicker fx:id="selectorColor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#cambioColor" prefHeight="26.0" prefWidth="40.0" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ColorPicker>
+            <Button fx:id="puntosDeControl" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMousePressed="#puntosDeControl" prefHeight="26.0" prefWidth="40.0" text="PC" GridPane.columnIndex="2" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="20.0" />
+         </padding>
+      </GridPane>
+   </bottom>
+   <top>
+      <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="640.0" prefHeight="43.0" prefWidth="1280.0" text="Graficadora" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="38.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <AnchorPane maxHeight="800.0" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="640.0" prefHeight="200.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas id="canvas" fx:id="canvas" height="660.0" layoutY="26.0" width="1234.0" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="15.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
