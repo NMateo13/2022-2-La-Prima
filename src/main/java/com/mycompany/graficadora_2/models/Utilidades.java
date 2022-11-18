@@ -3,11 +3,13 @@ package com.mycompany.graficadora_2.models;
 //Importación librerías utilizadas
 import com.mycompany.graficadora_2.controllers.GraficadoraController;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
+import static jdk.vm.ci.meta.JavaKind.Char;
 
 public class Utilidades
 {
@@ -17,6 +19,7 @@ public class Utilidades
     public static Boolean negrita = false;
     public static Boolean subrayado = false;
     public static Boolean cursiva = false;
+    public static Boolean invertir = false;
     public static Boolean puntosDeControl = false;
     public static int[] tamCanvas = new int[2];
     public static String texto = "";
@@ -81,10 +84,12 @@ public class Utilidades
         subrayado = false;
         negrita = false;
         cursiva = false;
+        invertir = false;
         tamCaracter=0;
         System.out.println("subrayado en reseteo: " + subrayado);
     }
     
+    //Método que cambia los estilos de las letras con el símbolo +
     public static int estilos(int i, String caracter)
     {
         if (caracter.equals("^") && i != Utilidades.texto.length() - 1) //Compara el largo del TEXTO
@@ -186,6 +191,12 @@ public class Utilidades
                         GraficadoraController.dibujarTongo = false;
                         return i += 1;
                     }
+                    else if (selectorPostTongo.equals("R"))
+                    {
+                        Utilidades.invertirTexto();
+                        GraficadoraController.dibujarTongo = false;
+                        return i+=1;
+                    }
                 }
             }
 
@@ -197,6 +208,31 @@ public class Utilidades
                 GraficadoraController.tresConfig = false;
             }
             return i;
+    }
+    
+    public static void invertirTexto()
+    {
+        int inicio = 2;
+        int fin = Utilidades.texto.length();
+        int aux = 0;
+        List<String> palabras = null;
+        for (int i = 0; i < Utilidades.texto.length(); i++) {
+            inicio = inicio + aux;
+            if(Utilidades.texto.length()>2){
+                if(Utilidades.texto.charAt(i) == ' '){
+                    System.out.println("Funciona");
+                }
+                
+                
+            }
+
+            
+            
+            
+            
+            
+        }
+        
     }
 
     //Expresiones regulares utilizadas para validar los caracteres que se ingresan.

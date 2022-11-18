@@ -7,6 +7,7 @@ import com.mycompany.graficadora_2.models.FormulasSimbolos;
 import com.mycompany.graficadora_2.models.Utilidades;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -126,8 +127,15 @@ public class GraficadoraController implements Initializable
             dosConfig = false;
             tresConfig = false;
             
+            
+            
+ 
+            
             //retorna la i para seguir con el ciclo
-            i = Utilidades.estilos(i, caracter);
+            i = Utilidades.estilos(i, caracter); //cambio de estilos de las palabras, con el +
+            
+            
+            
             
             if (((caracter.equals("^") && dibujarTongo) || !caracter.equals("^"))
                     && !caracter.equals("0") && !caracter.equals("1") && !caracter.equals("2") && !caracter.equals("3") && !caracter.equals("4") && !caracter.equals("5"))
