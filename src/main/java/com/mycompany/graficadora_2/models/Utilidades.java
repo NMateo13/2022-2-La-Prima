@@ -27,7 +27,11 @@ public class Utilidades
     public static ArrayList<Abecedario> caracteres = new ArrayList<>();
     public static Double grosorCaracter = 3.5;
     public static int tamCaracter = 0;
-
+    public static int aux = 0;
+    public static int inicio = 2;
+    public static int contador = 1;
+    public static List<String> palabras = new ArrayList<>();
+    
     GraficadoraController pizarra = new GraficadoraController();
 
     //Método encargado de modificar el tamaño de la tipografía.
@@ -212,18 +216,16 @@ public class Utilidades
     
     public static void invertirTexto()
     {
-        int inicio = 2;
-        int fin = Utilidades.texto.length();
-        int aux = 0;
-        List<String> palabras = null;
         for (int i = 0; i < Utilidades.texto.length(); i++) {
-            inicio = inicio + aux;
-            if(Utilidades.texto.length()>2){
-                if(Utilidades.texto.charAt(i) == ' '){
-                    System.out.println("Funciona");
-                }
-                
-                
+
+            if(Utilidades.texto.length()>2 && Utilidades.texto.charAt(i) == ' ') //validación necesaria para ignorar tongo y R
+            { 
+                char caracter = Utilidades.texto.charAt(i);
+                String palabra = Utilidades.texto.substring(inicio, i);
+                palabras.add(palabra);
+                //contador +=1;
+                System.out.println(palabras.get(contador));
+                contador +=1;
             }
 
             
