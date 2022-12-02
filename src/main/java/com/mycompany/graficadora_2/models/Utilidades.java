@@ -32,6 +32,8 @@ public class Utilidades
     public static int inicio = 2;
     public static int contador = 1;
     public static List<String> palabras = new ArrayList<>();
+    public static int x = 0;
+    public static int y = 0;
     
     GraficadoraController pizarra = new GraficadoraController();
 
@@ -83,6 +85,17 @@ public class Utilidades
         }
         return anchoAlto;
     }
+    
+    public static int comprobarTildes(String caracter, int alto, int y) //PROBANDO CODIGO
+    {
+        if("Á".equals(caracter) || "á".equals(caracter) || "É".equals(caracter) || "é".equals(caracter) ||
+            "Í".equals(caracter) || "í".equals(caracter) || "Ó".equals(caracter) || "ó".equals(caracter) ||
+            "Ú".equals(caracter) || "ú".equals(caracter))
+        {
+            return y = 5;
+        }
+        return y;
+    } 
 
     public static void resetearConfig()
     {
@@ -100,6 +113,41 @@ public class Utilidades
         if (caracter.equals("^") && i != Utilidades.texto.length() - 1) //Compara el largo del TEXTO
             {
                 primerTongo = true;
+                /*
+                //N+S+C+TXX TODAS LAS COMBINACIONES EN EL IF i+10
+                if ((i + 9) < Utilidades.texto.length())
+                {
+                    String selectorPostTongo = Utilidades.texto.substring(i + 1, i + 10);
+                    if (selectorPostTongo.equals("N+S+K") || selectorPostTongo.equals("N+K+S")
+                            || selectorPostTongo.equals("K+N+S") || selectorPostTongo.equals("K+S+N")
+                            || selectorPostTongo.equals("S+N+K") || selectorPostTongo.equals("S+K+N"))
+                    {
+                        Utilidades.negrita = true;
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.tresConfig = true;
+                        return i += 5;
+                    }
+                    else if (selectorPostTongo.equals("N+K") || selectorPostTongo.equals("K+N"))
+                    {
+                        Utilidades.negrita = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 5;
+                    }
+                    else if (selectorPostTongo.equals("K+S") || selectorPostTongo.equals("S+K"))
+                    {
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 5;
+                    }
+                }*/
+                
+                
                 //N+S+C TODAS LAS COMBINACIONES EN EL IF i+6
                 if ((i + 5) < Utilidades.texto.length())
                 {
@@ -133,7 +181,7 @@ public class Utilidades
                     }
                 }
 
-                //N+S N+C S+C TODAS EN EL MISMO IF i+4
+                //N+S S+K TODAS EN EL MISMO IF i+4
                 if ((i + 3) < Utilidades.texto.length())
                 {
                     String selectorPostTongo = Utilidades.texto.substring(i + 1, i + 4);
@@ -155,7 +203,7 @@ public class Utilidades
                         GraficadoraController.dosConfig = true;
                         return i += 3;
                     }
-                    else if (selectorPostTongo.equals("K+S") || selectorPostTongo.equals("K+C"))
+                    else if (selectorPostTongo.equals("K+S") || selectorPostTongo.equals("S+K"))
                     {
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
@@ -182,13 +230,7 @@ public class Utilidades
                     if (selectorPostTongo.equals("N"))
                     {
                         //preguntar si es un espacio para desactivar negrita subrayado o cursiva.
-                        if (caracter.equals("^") && primerTongo)
-                        {
-                            Utilidades.resetearConfig();
-                            GraficadoraController.unaConfig = false;
-                            GraficadoraController.dosConfig = false;
-                            GraficadoraController.tresConfig = false;
-                        }
+                        Utilidades.desactivar(caracter);
                         
                         Utilidades.negrita = true;
                         GraficadoraController.dibujarTongo = false;
@@ -197,13 +239,7 @@ public class Utilidades
                     }
                     else if (selectorPostTongo.equals("S"))
                     {
-                        if (caracter.equals("^") && primerTongo)
-                        {
-                            Utilidades.resetearConfig();
-                            GraficadoraController.unaConfig = false;
-                            GraficadoraController.dosConfig = false;
-                            GraficadoraController.tresConfig = false;
-                        }
+                        Utilidades.desactivar(caracter);
                         
                         Utilidades.subrayado = true;
                         GraficadoraController.dibujarTongo = false;
@@ -212,14 +248,7 @@ public class Utilidades
                     }
                     else if (selectorPostTongo.equals("K"))
                     {
-                        //preguntar si es un espacio para desactivar negrita subrayado o cursiva.
-                        if (caracter.equals("^") && primerTongo)
-                        {
-                            Utilidades.resetearConfig();
-                            GraficadoraController.unaConfig = false;
-                            GraficadoraController.dosConfig = false;
-                            GraficadoraController.tresConfig = false;
-                        }
+                        Utilidades.desactivar(caracter);
                         
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
@@ -259,12 +288,29 @@ public class Utilidades
         }
         
     }
+    
+    public static void desactivar(String caracter)
+    {
+        //preguntar si es un espacio para desactivar negrita subrayado o cursiva.
+        if (caracter.equals("^") && primerTongo)
+        {
+            Utilidades.resetearConfig();
+            GraficadoraController.unaConfig = false;
+            GraficadoraController.dosConfig = false;
+            GraficadoraController.tresConfig = false;
+        }
+    }
 
     //Expresiones regulares utilizadas para validar los caracteres que se ingresan.
     //Método dónde se validan caracteres que se pueden ingresar al programa.
     public static Boolean validacionCaracter(String caracter)
     {
-        String expresion = "[A-Za-z\\u00f1\\u00d1]|\\s|\\?|\\¿|\\!|\\¡|\\u002E|\\u002C|\\u003B|\\u003A|\\u2026|\\u201C|\\u201D|\\u0022|\\u2018|\\u2019|\\u0027|\\u00AB|\\u00BB|\\u0028|\\u0029|\\u005B|\\u005D|\\u007B|\\u007D|\\u002D|\\u005F|\\u005E|\\u002B|\\u0030|\\u0031|\\u0032|\\u0033|\\u0034|\\u0035";
+        String expresion = "[A-Za-z\\u00f1\\u00d1]|\\s|\\?|\\¿|\\!|\\¡|\\u002E|"
+                + "\\u002C|\\u003B|\\u003A|\\u2026|\\u201C|\\u201D|\\u0022|"
+                + "\\u2018|\\u2019|\\u0027|\\u00AB|\\u00BB|\\u0028|\\u0029|"
+                + "\\u005B|\\u005D|\\u007B|\\u007D|\\u002D|\\u005F|\\u005E|"
+                + "\\u002B|\\u0030|\\u0031|\\u0032|\\u0033|\\u0034|\\u0035|"
+                + "\\u00C1";
         return Pattern.matches(expresion, caracter);
     }
 
