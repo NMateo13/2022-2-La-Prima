@@ -988,5 +988,8 @@ public class FormulasSimbolos
             gc.setStroke(Utilidades.color);
         }
     }
+    
+    
+    
 
 }
