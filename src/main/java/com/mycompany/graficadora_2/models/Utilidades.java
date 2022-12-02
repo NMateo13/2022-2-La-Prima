@@ -20,6 +20,7 @@ public class Utilidades
     public static Boolean subrayado = false;
     public static Boolean cursiva = false;
     public static Boolean invertir = false;
+    public static Boolean primerTongo = false;
     public static Boolean puntosDeControl = false;
     public static int[] tamCanvas = new int[2];
     public static String texto = "";
@@ -98,6 +99,7 @@ public class Utilidades
     {
         if (caracter.equals("^") && i != Utilidades.texto.length() - 1) //Compara el largo del TEXTO
             {
+                primerTongo = true;
                 //N+S+C TODAS LAS COMBINACIONES EN EL IF i+6
                 if ((i + 5) < Utilidades.texto.length())
                 {
@@ -179,20 +181,49 @@ public class Utilidades
                     System.out.println("selectorPostTongo: " + selectorPostTongo);
                     if (selectorPostTongo.equals("N"))
                     {
+                        //preguntar si es un espacio para desactivar negrita subrayado o cursiva.
+                        if (caracter.equals("^") && primerTongo)
+                        {
+                            Utilidades.resetearConfig();
+                            GraficadoraController.unaConfig = false;
+                            GraficadoraController.dosConfig = false;
+                            GraficadoraController.tresConfig = false;
+                        }
+                        
                         Utilidades.negrita = true;
                         GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.unaConfig = true;
                         return i += 1;
                     }
                     else if (selectorPostTongo.equals("S"))
                     {
+                        if (caracter.equals("^") && primerTongo)
+                        {
+                            Utilidades.resetearConfig();
+                            GraficadoraController.unaConfig = false;
+                            GraficadoraController.dosConfig = false;
+                            GraficadoraController.tresConfig = false;
+                        }
+                        
                         Utilidades.subrayado = true;
                         GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.unaConfig = true;
                         return i += 1;
                     }
                     else if (selectorPostTongo.equals("K"))
                     {
+                        //preguntar si es un espacio para desactivar negrita subrayado o cursiva.
+                        if (caracter.equals("^") && primerTongo)
+                        {
+                            Utilidades.resetearConfig();
+                            GraficadoraController.unaConfig = false;
+                            GraficadoraController.dosConfig = false;
+                            GraficadoraController.tresConfig = false;
+                        }
+                        
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.unaConfig = true;
                         return i += 1;
                     }
                     else if (selectorPostTongo.equals("R"))
@@ -204,13 +235,7 @@ public class Utilidades
                 }
             }
 
-            //preguntar si es un espacio para desactivar negrita subrayado o cursiva.
-            if (caracter.equals(" "))
-            {
-                Utilidades.resetearConfig();
-                GraficadoraController.dosConfig = false;
-                GraficadoraController.tresConfig = false;
-            }
+
             return i;
     }
     
@@ -220,19 +245,17 @@ public class Utilidades
 
             if(Utilidades.texto.length()>2 && Utilidades.texto.charAt(i) == ' ') //validación necesaria para ignorar tongo y R
             { 
+                
+                
+                
                 char caracter = Utilidades.texto.charAt(i);
                 String palabra = Utilidades.texto.substring(inicio, i);
                 palabras.add(palabra);
                 //contador +=1;
                 System.out.println(palabras.get(contador));
                 contador +=1;
+                
             }
-
-            
-            
-            
-            
-            
         }
         
     }

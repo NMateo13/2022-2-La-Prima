@@ -31,6 +31,7 @@ public class GraficadoraController implements Initializable
     private ColorPicker selectorColor;
     public static GraphicsContext gc;
     ArrayList<Abecedario> caracteres = new ArrayList<>();
+    public static Boolean unaConfig;
     public static Boolean dosConfig;
     public static Boolean tresConfig;
     public static Boolean dibujarTongo;
@@ -113,17 +114,19 @@ public class GraficadoraController implements Initializable
         Utilidades.texto = this.texto.getText();
         Utilidades.limpiarCanvas(this.gc, this.canvas); //Limpia el canvas
         ArrayList<Abecedario> caracteres = new ArrayList<>();
+        
         int x = 0;
         int y = 0;
 
         for (int i = 0; i < Utilidades.texto.length(); i++)
         {
             dibujarTongo = true;
-            String caracter = String.valueOf(Utilidades.texto.charAt(i));
+            String caracter = String.valueOf(Utilidades.texto.charAt(i)); //crea y recibe el caracter correspondiente
 
             //pregunta si es un tongo para saber si es negrita subrayado o cursiva
             //Boolean dosConfig = false;
             //Boolean tresConfig = false;
+            unaConfig = false;
             dosConfig = false;
             tresConfig = false;
             
