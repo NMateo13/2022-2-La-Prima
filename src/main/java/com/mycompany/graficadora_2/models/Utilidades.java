@@ -188,6 +188,8 @@ public class Utilidades
                     System.out.println("selectorPostTongo: " + selectorPostTongo);
                     if (selectorPostTongo.equals("N+S") || selectorPostTongo.equals("S+N"))
                     {
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         Utilidades.negrita = true;
                         Utilidades.subrayado = true;
                         GraficadoraController.dibujarTongo = false;
@@ -197,6 +199,8 @@ public class Utilidades
                     }
                     else if (selectorPostTongo.equals("N+K") || selectorPostTongo.equals("K+N"))
                     {
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         Utilidades.negrita = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
@@ -205,6 +209,8 @@ public class Utilidades
                     }
                     else if (selectorPostTongo.equals("K+S") || selectorPostTongo.equals("S+K"))
                     {
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
@@ -229,8 +235,8 @@ public class Utilidades
                     System.out.println("selectorPostTongo: " + selectorPostTongo);
                     if (selectorPostTongo.equals("N"))
                     {
-                        //preguntar si es un espacio para desactivar negrita subrayado o cursiva.
-                        Utilidades.desactivar(caracter);
+                        
+                        Utilidades.desactivarEstilos(caracter);
                         
                         Utilidades.negrita = true;
                         GraficadoraController.dibujarTongo = false;
@@ -239,7 +245,7 @@ public class Utilidades
                     }
                     else if (selectorPostTongo.equals("S"))
                     {
-                        Utilidades.desactivar(caracter);
+                        Utilidades.desactivarEstilos(caracter);
                         
                         Utilidades.subrayado = true;
                         GraficadoraController.dibujarTongo = false;
@@ -248,7 +254,7 @@ public class Utilidades
                     }
                     else if (selectorPostTongo.equals("K"))
                     {
-                        Utilidades.desactivar(caracter);
+                        Utilidades.desactivarEstilos(caracter);
                         
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
@@ -289,7 +295,7 @@ public class Utilidades
         
     }
     
-    public static void desactivar(String caracter)
+    public static void desactivarEstilos(String caracter)
     {
         //preguntar si es un espacio para desactivar negrita subrayado o cursiva.
         if (caracter.equals("^") && primerTongo)
