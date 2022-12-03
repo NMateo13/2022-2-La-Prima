@@ -113,7 +113,8 @@ public class Utilidades
         if (caracter.equals("^") && i != Utilidades.texto.length() - 1) //Compara el largo del TEXTO
             {
                 primerTongo = true;
-
+                
+                //ESTILO + ESTILO + ESTILO + TAMAÑO Y COMBINACIONES POSIBLES
                 //N+S+K+TXX
                 if ((i + 9) < Utilidades.texto.length())
                 {
@@ -121,7 +122,9 @@ public class Utilidades
                     if (selectorPostTongo.equals("N+S+K+T10") || selectorPostTongo.equals("N+S+K+T11") 
                             || selectorPostTongo.equals("N+S+K+T12") || selectorPostTongo.equals("N+S+K+T13")
                             || selectorPostTongo.equals("N+S+K+T14") || selectorPostTongo.equals("N+S+K+T15"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(7, 9));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -134,7 +137,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("N+K+S+T10") || selectorPostTongo.equals("N+K+S+T11") 
                             || selectorPostTongo.equals("N+K+S+T12") || selectorPostTongo.equals("N+K+S+T13")
                             || selectorPostTongo.equals("N+K+S+T14") || selectorPostTongo.equals("N+K+S+T15"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(7, 9));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -147,7 +152,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("S+K+N+T10") || selectorPostTongo.equals("S+K+N+T11") 
                             || selectorPostTongo.equals("S+K+N+T12") || selectorPostTongo.equals("S+K+N+T13")
                             || selectorPostTongo.equals("S+K+N+T14") || selectorPostTongo.equals("S+K+N+T15"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(7, 9));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -160,7 +167,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("S+N+K+T10") || selectorPostTongo.equals("S+N+K+T11") 
                             || selectorPostTongo.equals("S+N+K+T12") || selectorPostTongo.equals("S+N+K+T13")
                             || selectorPostTongo.equals("S+N+K+T14") || selectorPostTongo.equals("S+N+K+T15"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(7, 9));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -173,7 +182,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("K+N+S+T10") || selectorPostTongo.equals("K+N+S+T11") 
                             || selectorPostTongo.equals("K+N+S+T12") || selectorPostTongo.equals("K+N+S+T13")
                             || selectorPostTongo.equals("K+N+S+T14") || selectorPostTongo.equals("K+N+S+T15"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(7, 9));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -186,7 +197,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("K+S+N+T10") || selectorPostTongo.equals("K+S+N+T11") 
                             || selectorPostTongo.equals("K+S+N+T12") || selectorPostTongo.equals("K+S+N+T13")
                             || selectorPostTongo.equals("K+S+N+T14") || selectorPostTongo.equals("K+S+N+T15"))
-                    {                      
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(7, 9));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -199,7 +212,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("N+S+T10+K") || selectorPostTongo.equals("N+S+T11+K") 
                             || selectorPostTongo.equals("N+S+T12+K") || selectorPostTongo.equals("N+S+T13+K")
                             || selectorPostTongo.equals("N+S+T14+K") || selectorPostTongo.equals("N+S+T15+K"))
-                    {                      
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -212,7 +227,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("N+K+T10+S") || selectorPostTongo.equals("N+K+T11+S") 
                             || selectorPostTongo.equals("N+K+T12+S") || selectorPostTongo.equals("N+K+T13+S")
                             || selectorPostTongo.equals("N+K+T14+S") || selectorPostTongo.equals("N+K+T15+S"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -225,7 +242,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("S+N+T10+K") || selectorPostTongo.equals("S+N+T11+K") 
                             || selectorPostTongo.equals("S+N+T12+K") || selectorPostTongo.equals("S+N+T13+K")
                             || selectorPostTongo.equals("S+N+T14+K") || selectorPostTongo.equals("S+N+T15+K"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -238,7 +257,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("S+K+T10+N") || selectorPostTongo.equals("S+K+T11+N") 
                             || selectorPostTongo.equals("S+K+T12+N") || selectorPostTongo.equals("S+K+T13+N")
                             || selectorPostTongo.equals("S+K+T14+N") || selectorPostTongo.equals("S+K+T15+N"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -251,7 +272,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("K+N+T10+S") || selectorPostTongo.equals("K+N+T11+S") 
                             || selectorPostTongo.equals("K+N+T12+S") || selectorPostTongo.equals("K+N+T13+S")
                             || selectorPostTongo.equals("K+N+T14+S") || selectorPostTongo.equals("K+N+T15+S"))
-                    {                      
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -264,7 +287,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("K+S+T10+N") || selectorPostTongo.equals("K+S+T11+N") 
                             || selectorPostTongo.equals("K+S+T12+N") || selectorPostTongo.equals("K+S+T13+N")
                             || selectorPostTongo.equals("K+S+T14+N") || selectorPostTongo.equals("K+S+T15+N"))
-                    {                      
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -277,7 +302,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("N+T10+S+K") || selectorPostTongo.equals("N+T11+S+K") 
                             || selectorPostTongo.equals("N+T12+S+K") || selectorPostTongo.equals("N+T13+S+K")
                             || selectorPostTongo.equals("N+T14+S+K") || selectorPostTongo.equals("N+T15+S+K"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -290,7 +317,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("N+T10+K+S") || selectorPostTongo.equals("N+T11+K+S") 
                             || selectorPostTongo.equals("N+T12+K+S") || selectorPostTongo.equals("N+T13+K+S")
                             || selectorPostTongo.equals("N+T14+K+S") || selectorPostTongo.equals("N+T15+K+S"))
-                    {                      
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -303,7 +332,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("S+T10+N+K") || selectorPostTongo.equals("S+T11+N+K") 
                             || selectorPostTongo.equals("S+T12+N+K") || selectorPostTongo.equals("S+T13+N+K")
                             || selectorPostTongo.equals("S+T14+N+K") || selectorPostTongo.equals("S+T15+N+K"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -316,7 +347,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("S+T10+K+N") || selectorPostTongo.equals("S+T11+K+N") 
                             || selectorPostTongo.equals("S+T12+K+N") || selectorPostTongo.equals("S+T13+K+N")
                             || selectorPostTongo.equals("S+T14+K+N") || selectorPostTongo.equals("S+T15+K+N"))
-                    {                      
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -329,7 +362,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("K+T10+N+S") || selectorPostTongo.equals("K+T11+N+S") 
                             || selectorPostTongo.equals("K+T12+N+S") || selectorPostTongo.equals("K+T13+N+S")
                             || selectorPostTongo.equals("K+T14+N+S") || selectorPostTongo.equals("K+T15+N+S"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -342,7 +377,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("K+T10+S+N") || selectorPostTongo.equals("K+T11+S+N") 
                             || selectorPostTongo.equals("K+T12+S+N") || selectorPostTongo.equals("K+T13+S+N")
                             || selectorPostTongo.equals("K+T14+S+N") || selectorPostTongo.equals("K+T15+S+N"))
-                    {                      
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -355,7 +392,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("T10+N+S+K") || selectorPostTongo.equals("T11+N+S+K") 
                             || selectorPostTongo.equals("T12+N+S+K") || selectorPostTongo.equals("T13+N+S+K")
                             || selectorPostTongo.equals("T14+N+S+K") || selectorPostTongo.equals("T15+N+S+K"))
-                    {                      
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -368,7 +407,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("T10+N+K+S") || selectorPostTongo.equals("T11+N+K+S") 
                             || selectorPostTongo.equals("T12+N+K+S") || selectorPostTongo.equals("T13+N+K+S")
                             || selectorPostTongo.equals("T14+N+K+S") || selectorPostTongo.equals("T15+N+K+S"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -381,7 +422,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("T10+S+N+K") || selectorPostTongo.equals("T11+S+N+K") 
                             || selectorPostTongo.equals("T12+S+N+K") || selectorPostTongo.equals("T13+S+N+K")
                             || selectorPostTongo.equals("T14+S+N+K") || selectorPostTongo.equals("T15+S+N+K"))
-                    {                      
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -394,7 +437,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("T10+S+K+N") || selectorPostTongo.equals("T11+S+K+N") 
                             || selectorPostTongo.equals("T12+S+K+N") || selectorPostTongo.equals("T13+S+K+N")
                             || selectorPostTongo.equals("T14+S+K+N") || selectorPostTongo.equals("T15+S+K+N"))
-                    {                      
+                    {     
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -407,7 +452,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("T10+K+N+S") || selectorPostTongo.equals("T11+K+N+S") 
                             || selectorPostTongo.equals("T12+K+N+S") || selectorPostTongo.equals("T13+K+N+S")
                             || selectorPostTongo.equals("T14+K+N+S") || selectorPostTongo.equals("T15+K+N+S"))
-                    {                      
+                    {  
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -420,7 +467,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("T10+K+S+N") || selectorPostTongo.equals("T11+K+S+N") 
                             || selectorPostTongo.equals("T12+K+S+N") || selectorPostTongo.equals("T13+K+S+N")
                             || selectorPostTongo.equals("T14+K+S+N") || selectorPostTongo.equals("T15+K+S+N"))
-                    {                      
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -432,15 +481,17 @@ public class Utilidades
                     }      
                 }    
 
+                //ESTILO + ESTILO + TAMAÑO Y COMBINACIONES POSIBLES                
                 if ((i + 7) < Utilidades.texto.length())
                 { 
                     String selectorPostTongo = Utilidades.texto.substring(i + 1, i + 8);
-                    //System.out.println("selectorPostTongo: " + selectorPostTongo);
                     //N+S+TXX
                     if (selectorPostTongo.equals("N+S+T10") || selectorPostTongo.equals("N+S+T11")
                             || selectorPostTongo.equals("N+S+T12") || selectorPostTongo.equals("N+S+T13")
                             || selectorPostTongo.equals("N+S+T14") || selectorPostTongo.equals("N+S+T15"))
                     {
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -453,6 +504,8 @@ public class Utilidades
                             || selectorPostTongo.equals("N+K+T12") || selectorPostTongo.equals("N+K+T13")
                             || selectorPostTongo.equals("N+K+T14") || selectorPostTongo.equals("N+K+T15"))
                     {
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -460,18 +513,235 @@ public class Utilidades
                         GraficadoraController.dibujarTongo = false;
                         GraficadoraController.dosConfig = true;
                         return i += 7;
-                    }    
+                    } //S+N+TXX
+                    else if (selectorPostTongo.equals("S+N+T10") || selectorPostTongo.equals("S+N+T11")
+                            || selectorPostTongo.equals("S+N+T12") || selectorPostTongo.equals("S+N+T13")
+                            || selectorPostTongo.equals("S+N+T14") || selectorPostTongo.equals("S+N+T15"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //S+K+TXX
+                    else if (selectorPostTongo.equals("S+K+T10") || selectorPostTongo.equals("S+K+T11")
+                            || selectorPostTongo.equals("S+K+T12") || selectorPostTongo.equals("S+K+T13")
+                            || selectorPostTongo.equals("S+K+T14") || selectorPostTongo.equals("S+K+T15"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.cursiva = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //K+N+TXX
+                    else if (selectorPostTongo.equals("K+N+T10") || selectorPostTongo.equals("K+N+T11")
+                            || selectorPostTongo.equals("K+N+T12") || selectorPostTongo.equals("K+N+T13")
+                            || selectorPostTongo.equals("K+N+T14") || selectorPostTongo.equals("K+N+T15"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.cursiva = true;  
+                        Utilidades.negrita = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //K+S+TXX
+                    else if (selectorPostTongo.equals("K+S+T10") || selectorPostTongo.equals("K+S+T11")
+                            || selectorPostTongo.equals("K+S+T12") || selectorPostTongo.equals("K+S+T13")
+                            || selectorPostTongo.equals("K+S+T14") || selectorPostTongo.equals("K+S+T15"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.cursiva = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //N+TXX+S
+                    else if (selectorPostTongo.equals("N+T10+S") || selectorPostTongo.equals("N+T11+S")
+                            || selectorPostTongo.equals("N+T12+S") || selectorPostTongo.equals("N+T13+S")
+                            || selectorPostTongo.equals("N+T14+S") || selectorPostTongo.equals("N+T15+S"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //N+TXX+K
+                    else if (selectorPostTongo.equals("N+T10+K") || selectorPostTongo.equals("N+T11+K")
+                            || selectorPostTongo.equals("N+T12+K") || selectorPostTongo.equals("N+T13+K")
+                            || selectorPostTongo.equals("N+T14+K") || selectorPostTongo.equals("N+T15+K"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //S+TXX+N
+                    else if (selectorPostTongo.equals("S+T10+N") || selectorPostTongo.equals("S+T11+N")
+                            || selectorPostTongo.equals("S+T12+N") || selectorPostTongo.equals("S+T13+N")
+                            || selectorPostTongo.equals("S+T14+N") || selectorPostTongo.equals("S+T15+N"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //S+TXX+K
+                    else if (selectorPostTongo.equals("S+T10+K") || selectorPostTongo.equals("S+T11+K")
+                            || selectorPostTongo.equals("S+T12+K") || selectorPostTongo.equals("S+T13+K")
+                            || selectorPostTongo.equals("S+T14+K") || selectorPostTongo.equals("S+T15+K"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.cursiva = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //K+TXX+N
+                    else if (selectorPostTongo.equals("K+T10+N") || selectorPostTongo.equals("K+T11+N")
+                            || selectorPostTongo.equals("K+T12+N") || selectorPostTongo.equals("K+T13+N")
+                            || selectorPostTongo.equals("K+T14+N") || selectorPostTongo.equals("K+T15+N"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.cursiva = true;  
+                        Utilidades.negrita = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //K+TXX+S
+                    else if (selectorPostTongo.equals("K+T10+S") || selectorPostTongo.equals("K+T11+S")
+                            || selectorPostTongo.equals("K+T12+S") || selectorPostTongo.equals("K+T13+S")
+                            || selectorPostTongo.equals("K+T14+S") || selectorPostTongo.equals("K+T15+S"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.cursiva = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //TXX+N+S
+                    else if (selectorPostTongo.equals("T10+N+S") || selectorPostTongo.equals("T11+N+S")
+                            || selectorPostTongo.equals("T12+N+S") || selectorPostTongo.equals("T13+N+S")
+                            || selectorPostTongo.equals("T14+N+S") || selectorPostTongo.equals("T15+N+S"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //TXX+N+K
+                    else if (selectorPostTongo.equals("T10+N+K") || selectorPostTongo.equals("T11+N+K")
+                            || selectorPostTongo.equals("T12+N+K") || selectorPostTongo.equals("T13+N+K")
+                            || selectorPostTongo.equals("T14+N+K") || selectorPostTongo.equals("T15+N+K"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //TXX+S+N
+                    else if (selectorPostTongo.equals("T10+S+N") || selectorPostTongo.equals("T11+S+N")
+                            || selectorPostTongo.equals("T12+S+N") || selectorPostTongo.equals("T13+S+N")
+                            || selectorPostTongo.equals("T14+S+N") || selectorPostTongo.equals("T15+S+N"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //TXX+S+K
+                    else if (selectorPostTongo.equals("T10+S+K") || selectorPostTongo.equals("T11+S+K")
+                            || selectorPostTongo.equals("T12+S+K") || selectorPostTongo.equals("T13+S+K")
+                            || selectorPostTongo.equals("T14+S+K") || selectorPostTongo.equals("T15+S+K"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.cursiva = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //TXX+K+N
+                    else if (selectorPostTongo.equals("T10+K+N") || selectorPostTongo.equals("T11+K+N")
+                            || selectorPostTongo.equals("T12+K+N") || selectorPostTongo.equals("T13+K+N")
+                            || selectorPostTongo.equals("T14+K+N") || selectorPostTongo.equals("T15+K+N"))
+                    {
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.cursiva = true;  
+                        Utilidades.negrita = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //TXX+K+S
+                    else if (selectorPostTongo.equals("T10+K+S") || selectorPostTongo.equals("T11+K+S")
+                            || selectorPostTongo.equals("T12+K+S") || selectorPostTongo.equals("T13+K+S")
+                            || selectorPostTongo.equals("T14+K+S") || selectorPostTongo.equals("T15+K+S"))
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.cursiva = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    }     
                 }
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                //N+S+K TODAS LAS COMBINACIONES EN EL IF i+6
+                
+                //ESTILO + TAMAÑO Y COMBINACIONES POSIBLES                
+                //ESTILO+ ESTILO+ ESTILO Y COMBINACIONES POSIBLES
                 if ((i + 5) < Utilidades.texto.length())
                 {
                     String selectorPostTongo = Utilidades.texto.substring(i + 1, i + 6);
@@ -480,6 +750,8 @@ public class Utilidades
                             || selectorPostTongo.equals("K+N+S") || selectorPostTongo.equals("K+S+N")
                             || selectorPostTongo.equals("S+N+K") || selectorPostTongo.equals("S+K+N"))
                     {
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         Utilidades.negrita = true;
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
@@ -490,7 +762,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("N+T10") || selectorPostTongo.equals("N+T11") 
                             || selectorPostTongo.equals("N+T12") || selectorPostTongo.equals("N+T13")
                             || selectorPostTongo.equals("N+T14") || selectorPostTongo.equals("N+T15"))
-                    {                      
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -501,7 +775,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("T10+N") || selectorPostTongo.equals("T11+N") //^TXX+N
                             || selectorPostTongo.equals("T12+N") || selectorPostTongo.equals("T13+N")
                             || selectorPostTongo.equals("T14+N") || selectorPostTongo.equals("T15+N"))
-                    {                      
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.negrita = true;  
@@ -512,7 +788,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("S+T10") || selectorPostTongo.equals("S+T11") //^S+TXX
                             || selectorPostTongo.equals("S+T12") || selectorPostTongo.equals("S+T13")
                             || selectorPostTongo.equals("S+T14") || selectorPostTongo.equals("S+T15"))
-                    {                       
+                    {    
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.subrayado = true; 
@@ -523,7 +801,9 @@ public class Utilidades
                     else if (selectorPostTongo.equals("T10+S") || selectorPostTongo.equals("T11+S") //^TXX+S
                             || selectorPostTongo.equals("T12+S") || selectorPostTongo.equals("T13+S")
                             || selectorPostTongo.equals("T14+S") || selectorPostTongo.equals("T15+S"))
-                    {                       
+                    {   
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.subrayado = true; 
@@ -535,6 +815,8 @@ public class Utilidades
                             || selectorPostTongo.equals("K+T12") || selectorPostTongo.equals("K+T13")
                             || selectorPostTongo.equals("K+T14") || selectorPostTongo.equals("K+T15"))
                     {
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.cursiva = true; 
@@ -547,6 +829,8 @@ public class Utilidades
                             || selectorPostTongo.equals("T12+K") || selectorPostTongo.equals("T13+K")
                             || selectorPostTongo.equals("T14+K") || selectorPostTongo.equals("T15+K"))
                     {
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
                         Utilidades.setTamCaracter(tam);
                         Utilidades.cursiva = true; 
@@ -555,8 +839,9 @@ public class Utilidades
                         return i += 5;
                     }                       
                 }
-
-                //N+S S+K TODAS EN EL MISMO IF i+4
+                
+                //TAMAÑO SOLO
+                //ESTILO + ESTILO Y COMBINACIONES POSIBLES
                 if ((i + 3) < Utilidades.texto.length())
                 {
                     String selectorPostTongo = Utilidades.texto.substring(i + 1, i + 4);
@@ -596,6 +881,9 @@ public class Utilidades
                             || selectorPostTongo.equals("T12") || selectorPostTongo.equals("T13")
                             || selectorPostTongo.equals("T14") || selectorPostTongo.equals("T15"))
                     {
+                        
+                        Utilidades.desactivarEstilos(caracter);
+                        
                         int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
                         Utilidades.setTamCaracter(tam);
                         GraficadoraController.dibujarTongo = false;
@@ -604,6 +892,7 @@ public class Utilidades
                     }
                 }
 
+                //ESTILO SOLO
                 if ((i + 1) < Utilidades.texto.length() && !GraficadoraController.dosConfig && !GraficadoraController.tresConfig)
                 {
                     String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(i + 1));
