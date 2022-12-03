@@ -34,6 +34,7 @@ public class GraficadoraController implements Initializable
     public static Boolean unaConfig;
     public static Boolean dosConfig;
     public static Boolean tresConfig;
+    public static Boolean masConfig;
     public static Boolean dibujarTongo;
 
     @FXML
@@ -137,11 +138,12 @@ public class GraficadoraController implements Initializable
             if (((caracter.equals("^") && dibujarTongo) || !caracter.equals("^"))
                     && !caracter.equals("0") && !caracter.equals("1") && !caracter.equals("2") && !caracter.equals("3") && !caracter.equals("4") && !caracter.equals("5"))
             {
+                
                 int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(caracter), Utilidades.tamCaracter);
                 int ancho = anchoAlto[0];
                 int alto = anchoAlto[1];
                 
-                y = Utilidades.comprobarTildes(caracter, alto, y); //PROBANDO CODIGO
+                y = Utilidades.moverCarTildes(caracter, y); //PROBANDO CODIGO
 
                 Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
                 caracteres.add(caracterMomentaneo);
@@ -281,10 +283,7 @@ public class GraficadoraController implements Initializable
         {
             FormulasSimbolos.signoMas(this.gc, caracter);
         }
-        /*else if (caracter.getCaracter().equals("Á") || caracter.getCaracter().equals("á")) //PROBANDO CODIGO
-        {
-            FormulasLetras.a(this.gc, caracter);
-        }*/ 
+        
 
     }
 
@@ -294,7 +293,11 @@ public class GraficadoraController implements Initializable
         if (caracter.getCaracter().equals("A") || caracter.getCaracter().equals("a"))
         {
             FormulasLetras.a(this.gc, caracter);
-        }   
+        }
+        else if (caracter.getCaracter().equals("Á") || caracter.getCaracter().equals("á")) //PROBANDO CODIGO
+        {
+            FormulasLetras.atildes(this.gc, caracter);
+        }    
         else if (caracter.getCaracter().equals("B") || caracter.getCaracter().equals("b"))
         {
             FormulasLetras.b(this.gc, caracter);
@@ -311,6 +314,10 @@ public class GraficadoraController implements Initializable
         {
             FormulasLetras.e(this.gc, caracter);
         }
+        else if (caracter.getCaracter().equals("É") || caracter.getCaracter().equals("é"))
+        {
+            FormulasLetras.etildes(this.gc, caracter);
+        }
         else if (caracter.getCaracter().equals("F") || caracter.getCaracter().equals("f"))
         {
             FormulasLetras.f(this.gc, caracter);
@@ -326,6 +333,10 @@ public class GraficadoraController implements Initializable
         else if (caracter.getCaracter().equals("I") || caracter.getCaracter().equals("i"))
         {
             FormulasLetras.i(this.gc, caracter);
+        }
+        else if (caracter.getCaracter().equals("Í") || caracter.getCaracter().equals("í"))
+        {
+            FormulasLetras.itildes(this.gc, caracter);
         }
         else if (caracter.getCaracter().equals("J") || caracter.getCaracter().equals("j"))
         {
@@ -355,6 +366,10 @@ public class GraficadoraController implements Initializable
         {
             FormulasLetras.o(this.gc, caracter);
         }
+        else if (caracter.getCaracter().equals("Ó") || caracter.getCaracter().equals("ó"))
+        {
+            FormulasLetras.otildes(this.gc, caracter);
+        }
         else if (caracter.getCaracter().equals("P") || caracter.getCaracter().equals("p"))
         {
             FormulasLetras.p(this.gc, caracter);
@@ -378,6 +393,10 @@ public class GraficadoraController implements Initializable
         else if (caracter.getCaracter().equals("U") || caracter.getCaracter().equals("u"))
         {
             FormulasLetras.u(this.gc, caracter);
+        }
+        else if (caracter.getCaracter().equals("Ú") || caracter.getCaracter().equals("ú"))
+        {
+            FormulasLetras.utildes(this.gc, caracter);
         }
         else if (caracter.getCaracter().equals("V") || caracter.getCaracter().equals("v"))
         {
