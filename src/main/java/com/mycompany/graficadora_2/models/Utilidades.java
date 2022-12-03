@@ -286,19 +286,191 @@ public class Utilidades
                         GraficadoraController.dibujarTongo = false;
                         GraficadoraController.dosConfig = true;
                         return i += 9;
-                    }     
+                    } //N+TXX+K+S   
+                    else if (selectorPostTongo.equals("N+T10+K+S") || selectorPostTongo.equals("N+T11+K+S") 
+                            || selectorPostTongo.equals("N+T12+K+S") || selectorPostTongo.equals("N+T13+K+S")
+                            || selectorPostTongo.equals("N+T14+K+S") || selectorPostTongo.equals("N+T15+K+S"))
+                    {                      
+                        int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 9;
+                    } //S+TXX+N+K   
+                    else if (selectorPostTongo.equals("S+T10+N+K") || selectorPostTongo.equals("S+T11+N+K") 
+                            || selectorPostTongo.equals("S+T12+N+K") || selectorPostTongo.equals("S+T13+N+K")
+                            || selectorPostTongo.equals("S+T14+N+K") || selectorPostTongo.equals("S+T15+N+K"))
+                    {                      
+                        int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 9;
+                    } //S+TXX+K+N   
+                    else if (selectorPostTongo.equals("S+T10+K+N") || selectorPostTongo.equals("S+T11+K+N") 
+                            || selectorPostTongo.equals("S+T12+K+N") || selectorPostTongo.equals("S+T13+K+N")
+                            || selectorPostTongo.equals("S+T14+K+N") || selectorPostTongo.equals("S+T15+K+N"))
+                    {                      
+                        int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 9;
+                    } //K+TXX+N+S   
+                    else if (selectorPostTongo.equals("K+T10+N+S") || selectorPostTongo.equals("K+T11+N+S") 
+                            || selectorPostTongo.equals("K+T12+N+S") || selectorPostTongo.equals("K+T13+N+S")
+                            || selectorPostTongo.equals("K+T14+N+S") || selectorPostTongo.equals("K+T15+N+S"))
+                    {                      
+                        int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 9;
+                    } //K+TXX+S+N   
+                    else if (selectorPostTongo.equals("K+T10+S+N") || selectorPostTongo.equals("K+T11+S+N") 
+                            || selectorPostTongo.equals("K+T12+S+N") || selectorPostTongo.equals("K+T13+S+N")
+                            || selectorPostTongo.equals("K+T14+S+N") || selectorPostTongo.equals("K+T15+S+N"))
+                    {                      
+                        int tam = Integer.parseInt(selectorPostTongo.substring(3, 5));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 9;
+                    } //TXX+N+S+K
+                    else if (selectorPostTongo.equals("T10+N+S+K") || selectorPostTongo.equals("T11+N+S+K") 
+                            || selectorPostTongo.equals("T12+N+S+K") || selectorPostTongo.equals("T13+N+S+K")
+                            || selectorPostTongo.equals("T14+N+S+K") || selectorPostTongo.equals("T15+N+S+K"))
+                    {                      
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 9;
+                    } //TXX+N+K+S
+                    else if (selectorPostTongo.equals("T10+N+K+S") || selectorPostTongo.equals("T11+N+K+S") 
+                            || selectorPostTongo.equals("T12+N+K+S") || selectorPostTongo.equals("T13+N+K+S")
+                            || selectorPostTongo.equals("T14+N+K+S") || selectorPostTongo.equals("T15+N+K+S"))
+                    {                      
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 9;
+                    } //TXX+S+N+K
+                    else if (selectorPostTongo.equals("T10+S+N+K") || selectorPostTongo.equals("T11+S+N+K") 
+                            || selectorPostTongo.equals("T12+S+N+K") || selectorPostTongo.equals("T13+S+N+K")
+                            || selectorPostTongo.equals("T14+S+N+K") || selectorPostTongo.equals("T15+S+N+K"))
+                    {                      
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 9;
+                    } //TXX+S+K+N
+                    else if (selectorPostTongo.equals("T10+S+K+N") || selectorPostTongo.equals("T11+S+K+N") 
+                            || selectorPostTongo.equals("T12+S+K+N") || selectorPostTongo.equals("T13+S+K+N")
+                            || selectorPostTongo.equals("T14+S+K+N") || selectorPostTongo.equals("T15+S+K+N"))
+                    {                      
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 9;
+                    } //TXX+K+N+S
+                    else if (selectorPostTongo.equals("T10+K+N+S") || selectorPostTongo.equals("T11+K+N+S") 
+                            || selectorPostTongo.equals("T12+K+N+S") || selectorPostTongo.equals("T13+K+N+S")
+                            || selectorPostTongo.equals("T14+K+N+S") || selectorPostTongo.equals("T15+K+N+S"))
+                    {                      
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 9;
+                    } //TXX+K+S+N
+                    else if (selectorPostTongo.equals("T10+K+S+N") || selectorPostTongo.equals("T11+K+S+N") 
+                            || selectorPostTongo.equals("T12+K+S+N") || selectorPostTongo.equals("T13+K+S+N")
+                            || selectorPostTongo.equals("T14+K+S+N") || selectorPostTongo.equals("T15+K+S+N"))
+                    {                      
+                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 9;
+                    }      
                 }    
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
+                if ((i + 7) < Utilidades.texto.length())
+                { 
+                    String selectorPostTongo = Utilidades.texto.substring(i + 1, i + 8);
+                    //System.out.println("selectorPostTongo: " + selectorPostTongo);
+                    //N+S+TXX
+                    if (selectorPostTongo.equals("N+S+T10") || selectorPostTongo.equals("N+S+T11")
+                            || selectorPostTongo.equals("N+S+T12") || selectorPostTongo.equals("N+S+T13")
+                            || selectorPostTongo.equals("N+S+T14") || selectorPostTongo.equals("N+S+T15"))
+                    {
+                        int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.subrayado = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    } //N+K+TXX
+                    else if (selectorPostTongo.equals("N+K+T10") || selectorPostTongo.equals("N+K+T11")
+                            || selectorPostTongo.equals("N+K+T12") || selectorPostTongo.equals("N+K+T13")
+                            || selectorPostTongo.equals("N+K+T14") || selectorPostTongo.equals("N+K+T15"))
+                    {
+                        int tam = Integer.parseInt(selectorPostTongo.substring(5, 7));
+                        Utilidades.setTamCaracter(tam);
+                        Utilidades.negrita = true;  
+                        Utilidades.cursiva = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.dosConfig = true;
+                        return i += 7;
+                    }    
+                }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 //N+S+K TODAS LAS COMBINACIONES EN EL IF i+6
                 if ((i + 5) < Utilidades.texto.length())
                 {
