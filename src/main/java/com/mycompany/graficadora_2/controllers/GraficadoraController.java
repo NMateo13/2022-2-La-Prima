@@ -7,13 +7,13 @@ import com.mycompany.graficadora_2.models.FormulasSimbolos;
 import com.mycompany.graficadora_2.models.Utilidades;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -35,8 +35,9 @@ public class GraficadoraController implements Initializable
     public static Boolean dosConfig;
     public static Boolean tresConfig;
     public static Boolean dibujarTongo;
-
     @FXML
+    private Button puntosDeControl;
+
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -57,7 +58,7 @@ public class GraficadoraController implements Initializable
             e.consume();
         }
     }
-
+   
     //Método encargado de pintar caracteres en el panel.
     private void pintar()
     {
@@ -77,13 +78,6 @@ public class GraficadoraController implements Initializable
                 dibujarSimbolo(Utilidades.caracteres.get(i));
             }
         }
-    }
-
-    //Método encargado de aplicar subrayado a los caracteres.
-    private void subrayar()
-    {
-        Utilidades.subrayado = !Utilidades.subrayado;
-        pintar();
     }
 
     //Método encargado de cambiar de color a los caracteres.
@@ -133,6 +127,7 @@ public class GraficadoraController implements Initializable
             
             //retorna la i para seguir con el ciclo
             i = Utilidades.estilos(i, caracter); //cambio de estilos de las palabras, con el +
+            Utilidades.ajustarTexto(Utilidades.tamCaracter);
 
             if (((caracter.equals("^") && dibujarTongo) || !caracter.equals("^"))
                     && !caracter.equals("0") && !caracter.equals("1") && !caracter.equals("2") && !caracter.equals("3") && !caracter.equals("4") && !caracter.equals("5"))
