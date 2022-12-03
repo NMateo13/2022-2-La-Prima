@@ -7,6 +7,7 @@ import com.mycompany.graficadora_2.models.FormulasSimbolos;
 import com.mycompany.graficadora_2.models.Utilidades;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,6 +31,10 @@ public class GraficadoraController implements Initializable
     private ColorPicker selectorColor;
     public static GraphicsContext gc;
     ArrayList<Abecedario> caracteres = new ArrayList<>();
+    public static Boolean unaConfig;
+    public static Boolean dosConfig;
+    public static Boolean tresConfig;
+    public static Boolean dibujarTongo;
 
     @FXML
     @Override
@@ -109,127 +114,25 @@ public class GraficadoraController implements Initializable
         Utilidades.texto = this.texto.getText();
         Utilidades.limpiarCanvas(this.gc, this.canvas); //Limpia el canvas
         ArrayList<Abecedario> caracteres = new ArrayList<>();
+        
         int x = 0;
         int y = 0;
 
         for (int i = 0; i < Utilidades.texto.length(); i++)
         {
-            Boolean dibujarTongo = true;
-            String caracter = String.valueOf(Utilidades.texto.charAt(i));
+            dibujarTongo = true;
+            String caracter = String.valueOf(Utilidades.texto.charAt(i)); //crea y recibe el caracter correspondiente
+            
 
             //pregunta si es un tongo para saber si es negrita subrayado o cursiva
-            Boolean dosConfig = false;
-            Boolean tresConfig = false;
-
-            if (caracter.equals("^") && i != Utilidades.texto.length() - 1) //Compara el largo del TEXTO
-            {
-                //N+S+C TODAS LAS COMBINACIONES EN EL IF i+6
-                if ((i + 5) < Utilidades.texto.length())
-                {
-                    String selectorPostTongo = Utilidades.texto.substring(i + 1, i + 6);
-                    if (selectorPostTongo.equals("N+S+K") || selectorPostTongo.equals("N+K+S")
-                            || selectorPostTongo.equals("K+N+S") || selectorPostTongo.equals("K+S+N")
-                            || selectorPostTongo.equals("S+N+K") || selectorPostTongo.equals("S+K+N"))
-                    {
-                        Utilidades.negrita = true;
-                        Utilidades.subrayado = true;
-                        Utilidades.cursiva = true;
-                        dibujarTongo = false;
-                        i += 5;
-                        tresConfig = true;
-                    }
-                    else if (selectorPostTongo.equals("N+K") || selectorPostTongo.equals("K+N"))
-                    {
-                        Utilidades.negrita = true;
-                        Utilidades.cursiva = true;
-                        dibujarTongo = false;
-                        i += 5;
-                        dosConfig = true;
-                    }
-                    else if (selectorPostTongo.equals("K+S") || selectorPostTongo.equals("S+K"))
-                    {
-                        Utilidades.subrayado = true;
-                        Utilidades.cursiva = true;
-                        dibujarTongo = false;
-                        i += 5;
-                        dosConfig = true;
-                    }
-                }
-
-                //N+S N+C S+C TODAS EN EL MISMO IF i+4
-                if ((i + 3) < Utilidades.texto.length())
-                {
-                    String selectorPostTongo = Utilidades.texto.substring(i + 1, i + 4);
-                    System.out.println("selectorPostTongo: " + selectorPostTongo);
-                    if (selectorPostTongo.equals("N+S") || selectorPostTongo.equals("S+N"))
-                    {
-                        Utilidades.negrita = true;
-                        Utilidades.subrayado = true;
-                        dibujarTongo = false;
-                        i += 3;
-                        dosConfig = true;
-
-                    }
-                    else if (selectorPostTongo.equals("N+K") || selectorPostTongo.equals("K+N"))
-                    {
-                        Utilidades.negrita = true;
-                        Utilidades.cursiva = true;
-                        dibujarTongo = false;
-                        i += 3;
-                        dosConfig = true;
-                    }
-                    else if (selectorPostTongo.equals("K+S") || selectorPostTongo.equals("K+C"))
-                    {
-                        Utilidades.subrayado = true;
-                        Utilidades.cursiva = true;
-                        dibujarTongo = false;
-                        i += 3;
-                        dosConfig = true;
-                    }
-                    else if (selectorPostTongo.equals("T10") || selectorPostTongo.equals("T11")
-                            || selectorPostTongo.equals("T12") || selectorPostTongo.equals("T13")
-                            || selectorPostTongo.equals("T14") || selectorPostTongo.equals("T15"))
-                    {
-                        int tam = Integer.parseInt(selectorPostTongo.substring(1, 3));
-                        Utilidades.setTamCaracter(tam);
-                        dibujarTongo = false;
-                        i += 3;
-                        dosConfig = true;
-                    }
-                }
-
-                if ((i + 1) < Utilidades.texto.length() && !dosConfig && !tresConfig)
-                {
-                    String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(i + 1));
-                    System.out.println("selectorPostTongo: " + selectorPostTongo);
-                    if (selectorPostTongo.equals("N"))
-                    {
-                        Utilidades.negrita = true;
-                        dibujarTongo = false;
-                        i += 1;
-                    }
-                    else if (selectorPostTongo.equals("S"))
-                    {
-                        Utilidades.subrayado = true;
-                        dibujarTongo = false;
-                        i += 1;
-                    }
-                    else if (selectorPostTongo.equals("K"))
-                    {
-                        Utilidades.cursiva = true;
-                        dibujarTongo = false;
-                        i += 1;
-                    }
-                }
-            }
-
-            //preguntar si es un espacio para desactivar negrita subrayado o cursiva.
-            if (caracter.equals(" "))
-            {
-                Utilidades.resetearConfig();
-                dosConfig = false;
-                tresConfig = false;
-            }
+            //Boolean dosConfig = false;
+            //Boolean tresConfig = false;
+            unaConfig = false;
+            dosConfig = false;
+            tresConfig = false;
+            
+            //retorna la i para seguir con el ciclo
+            i = Utilidades.estilos(i, caracter); //cambio de estilos de las palabras, con el +
 
             if (((caracter.equals("^") && dibujarTongo) || !caracter.equals("^"))
                     && !caracter.equals("0") && !caracter.equals("1") && !caracter.equals("2") && !caracter.equals("3") && !caracter.equals("4") && !caracter.equals("5"))
@@ -237,6 +140,8 @@ public class GraficadoraController implements Initializable
                 int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(caracter), Utilidades.tamCaracter);
                 int ancho = anchoAlto[0];
                 int alto = anchoAlto[1];
+                
+                y = Utilidades.comprobarTildes(caracter, alto, y); //PROBANDO CODIGO
 
                 Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
                 caracteres.add(caracterMomentaneo);
@@ -376,6 +281,10 @@ public class GraficadoraController implements Initializable
         {
             FormulasSimbolos.signoMas(this.gc, caracter);
         }
+        /*else if (caracter.getCaracter().equals("Á") || caracter.getCaracter().equals("á")) //PROBANDO CODIGO
+        {
+            FormulasLetras.a(this.gc, caracter);
+        }*/ 
 
     }
 
@@ -385,7 +294,7 @@ public class GraficadoraController implements Initializable
         if (caracter.getCaracter().equals("A") || caracter.getCaracter().equals("a"))
         {
             FormulasLetras.a(this.gc, caracter);
-        }
+        }   
         else if (caracter.getCaracter().equals("B") || caracter.getCaracter().equals("b"))
         {
             FormulasLetras.b(this.gc, caracter);
