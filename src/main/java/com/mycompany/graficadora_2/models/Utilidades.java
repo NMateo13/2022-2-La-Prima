@@ -86,7 +86,7 @@ public class Utilidades
         return anchoAlto;
     }
     
-    public static int moverCarTildes(String caracter, int alto, int y) //PROBANDO CODIGO
+    public static int moverCarTildes(String caracter, int y) //PROBANDO CODIGO
     {
         if("Á".equals(caracter) || "á".equals(caracter) || "É".equals(caracter) || "é".equals(caracter) ||
             "Í".equals(caracter) || "í".equals(caracter) || "Ó".equals(caracter) || "ó".equals(caracter) ||

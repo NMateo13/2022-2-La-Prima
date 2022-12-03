@@ -143,7 +143,7 @@ public class GraficadoraController implements Initializable
                 int ancho = anchoAlto[0];
                 int alto = anchoAlto[1];
                 
-                y = Utilidades.moverCarTildes(caracter, alto, y); //PROBANDO CODIGO
+                y = Utilidades.moverCarTildes(caracter, y); //PROBANDO CODIGO
 
                 Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
                 caracteres.add(caracterMomentaneo);

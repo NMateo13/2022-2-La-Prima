@@ -104,7 +104,10 @@ public class FormulasLetras
                 gc.strokeArc(letra.getX() + ancho * 0.6545, letra.getY() + alto * 0.4307, ancho * 0.3090, alto * 0.5384, 180, 110, ArcType.OPEN);//Arcos
                 gc.strokeLine(letra.getX() +ancho*0.9090, letra.getY() +alto*0.9272, letra.getX() +ancho*1, letra.getY() +alto*0.8000);
             }else{ //letra normal
-                gc.strokeLine(24, 6, 29, 2);
+                //TILDE
+                //gc.strokeLine(24, 6, 29, 2);
+                gc.strokeLine(letra.getX() + ancho * 0.4363, 2 + alto * 0.0923, letra.getX() + ancho * 0.5272, 2 + alto * 0.0307);
+                //gc.strokeLine(letra.getX() + ancho * 0.4363, letra.getY() + alto * 0.0923, letra.getX() + ancho * 0.5272, letra.getY() + alto * 0.0307);
                 gc.strokeArc(letra.getX() + ancho * 0.0727, letra.getY() + alto * 0.1230, ancho * 0.7090, alto * 0.8461, 40, 280, ArcType.OPEN);//Arco
                 gc.strokeLine(letra.getX() + ancho * 0.6909, letra.getY() + alto * 0.2461, letra.getX() + ancho * 0.7090, letra.getY() + alto * 0.8461);//Línea
                 gc.strokeArc(letra.getX() + ancho * 0.7090, letra.getY() + alto * 0.4307, ancho * 0.2727, alto * 0.5384, 180, 170, ArcType.OPEN);//Arcos 
