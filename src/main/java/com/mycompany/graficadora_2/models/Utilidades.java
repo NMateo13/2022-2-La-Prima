@@ -88,11 +88,12 @@ public class Utilidades
     
     public static int moverCarTildes(String caracter, int y) //PROBANDO CODIGO
     {
-        if("Á".equals(caracter) || "á".equals(caracter) || "É".equals(caracter) || "é".equals(caracter) ||
-            "Í".equals(caracter) || "í".equals(caracter) || "Ó".equals(caracter) || "ó".equals(caracter) ||
-            "Ú".equals(caracter) || "ú".equals(caracter))
+        if("Á".equals(caracter) || "É".equals(caracter)|| "Í".equals(caracter)
+        || "Ó".equals(caracter) || "Ú".equals(caracter))
         {
-            return y = 5;
+            if( x == 0 && y == 0){
+                return y = y+5;
+            }
         }
         return y;
     } 
@@ -975,12 +976,14 @@ public class Utilidades
     //Método dónde se validan caracteres que se pueden ingresar al programa.
     public static Boolean validacionCaracter(String caracter)
     {
+        //mayusculas, minusculas, Ñ, ñ, simbolos, mayusculas con tildes, minusculas con tildes
         String expresion = "[A-Za-z\\u00f1\\u00d1]|\\s|\\?|\\¿|\\!|\\¡|\\u002E|"
                 + "\\u002C|\\u003B|\\u003A|\\u2026|\\u201C|\\u201D|\\u0022|"
                 + "\\u2018|\\u2019|\\u0027|\\u00AB|\\u00BB|\\u0028|\\u0029|"
                 + "\\u005B|\\u005D|\\u007B|\\u007D|\\u002D|\\u005F|\\u005E|"
                 + "\\u002B|\\u0030|\\u0031|\\u0032|\\u0033|\\u0034|\\u0035|"
-                + "\\u00C1";
+                + "\\u00C1|\\u00C9|\\u00CD|\\u00D3|\\u00DA|\\u00E1|\\u00E9|"
+                + "\\u00ED|\\u00F3|\\u00FA"; 
         return Pattern.matches(expresion, caracter);
     }
 
@@ -989,22 +992,12 @@ public class Utilidades
     {
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
     }
-
-    //Método que valida si el caracter es minúscula o no. (Usos específicos)
-    public static String esLetraMinuscula(String caracter)
-    {
-        String expresion = "[a-z\\u00f1]";
-        if (Pattern.matches(expresion, caracter))
-        {
-            return "minuscula";
-        }
-        return "mayuscula";
-    }
+    
 
     public static String tipoCaracter(String caracter)
     {
-        String expresion1 = "[A-Z\\u00d1\\u00C1]"; //Ñ, Á
-        String expresion2 = "[a-z\\u00f1]";
+        String expresion1 = "[A-Z\\u00d1\\u00C1\\u00C9\\u00CD\\u00D3\\u00DA]"; //Ñ, Á, É, Í, Ó, Ú
+        String expresion2 = "[a-z\\u00f1\\u00E1\\u00E9\\u00ED\\u00F3\\u00FA]"; //ñ, á, é, í, ó, ú
         if (Pattern.matches(expresion1, caracter))
         {
             return "mayuscula";

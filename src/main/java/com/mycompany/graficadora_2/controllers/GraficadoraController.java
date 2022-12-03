@@ -314,6 +314,10 @@ public class GraficadoraController implements Initializable
         {
             FormulasLetras.e(this.gc, caracter);
         }
+        else if (caracter.getCaracter().equals("É") || caracter.getCaracter().equals("é"))
+        {
+            FormulasLetras.etildes(this.gc, caracter);
+        }
         else if (caracter.getCaracter().equals("F") || caracter.getCaracter().equals("f"))
         {
             FormulasLetras.f(this.gc, caracter);
@@ -329,6 +333,10 @@ public class GraficadoraController implements Initializable
         else if (caracter.getCaracter().equals("I") || caracter.getCaracter().equals("i"))
         {
             FormulasLetras.i(this.gc, caracter);
+        }
+        else if (caracter.getCaracter().equals("Í") || caracter.getCaracter().equals("í"))
+        {
+            FormulasLetras.itildes(this.gc, caracter);
         }
         else if (caracter.getCaracter().equals("J") || caracter.getCaracter().equals("j"))
         {
@@ -358,6 +366,10 @@ public class GraficadoraController implements Initializable
         {
             FormulasLetras.o(this.gc, caracter);
         }
+        else if (caracter.getCaracter().equals("Ó") || caracter.getCaracter().equals("ó"))
+        {
+            FormulasLetras.otildes(this.gc, caracter);
+        }
         else if (caracter.getCaracter().equals("P") || caracter.getCaracter().equals("p"))
         {
             FormulasLetras.p(this.gc, caracter);
@@ -381,6 +393,10 @@ public class GraficadoraController implements Initializable
         else if (caracter.getCaracter().equals("U") || caracter.getCaracter().equals("u"))
         {
             FormulasLetras.u(this.gc, caracter);
+        }
+        else if (caracter.getCaracter().equals("Ú") || caracter.getCaracter().equals("ú"))
+        {
+            FormulasLetras.utildes(this.gc, caracter);
         }
         else if (caracter.getCaracter().equals("V") || caracter.getCaracter().equals("v"))
         {

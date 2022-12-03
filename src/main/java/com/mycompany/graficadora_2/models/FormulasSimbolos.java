@@ -15,7 +15,7 @@ public class FormulasSimbolos
 
     public static void aperturaInterrogacion(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){ //simbolo cursivo
@@ -53,7 +53,7 @@ public class FormulasSimbolos
     //U+003F
     public static void cierreInterrogacion(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){ //simbolo cursivo
@@ -91,7 +91,7 @@ public class FormulasSimbolos
     //U+00A1
     public static void aperturaExclamacion(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){ //simbolo cursivo
@@ -124,7 +124,7 @@ public class FormulasSimbolos
     //U+0021
     public static void cierreExclamacion(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){ //simbolo cursivo
@@ -157,7 +157,7 @@ public class FormulasSimbolos
 
     public static void punto(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){ //simbolo cursivo
@@ -186,7 +186,7 @@ public class FormulasSimbolos
     //U+002C
     public static void coma(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){ //simbolo cursivo
@@ -222,7 +222,7 @@ public class FormulasSimbolos
     //U+037E
     public static void puntoComa(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){ //simbolo cursivo
@@ -262,7 +262,7 @@ public class FormulasSimbolos
     //U+0589
     public static void dosPuntos(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){ //simbolo cursivo
@@ -297,7 +297,7 @@ public class FormulasSimbolos
     //U+2026
     public static void puntosSuspensivo(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){ //simbolo cursivo
@@ -336,7 +336,7 @@ public class FormulasSimbolos
     //U+201C
     public static void aperturaComillaDoble(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){ //simbolo cursivo
@@ -385,7 +385,7 @@ public class FormulasSimbolos
     //U+201D
     public static void cierreComillaDoble(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){ //simbolo cursivo
@@ -434,7 +434,7 @@ public class FormulasSimbolos
     //U+0022
     public static void comillaDoble(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         gc.strokeLine(simbolo.getX() + ancho * 0.6250, simbolo.getY() + alto * 0.1272, simbolo.getX() + ancho * 0.7812, simbolo.getY() + alto * 0.0545);
@@ -462,7 +462,7 @@ public class FormulasSimbolos
     //U+2018
     public static void aperturaComillaSimple(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -500,7 +500,7 @@ public class FormulasSimbolos
     //U+2019
     public static void cierreComillaSimple(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -538,7 +538,7 @@ public class FormulasSimbolos
     //U+0027
     public static void comillaSimple(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         gc.strokeLine(simbolo.getX() + ancho * 0.4375, simbolo.getY() + alto * 0.1272, simbolo.getX() + ancho * 0.5937, simbolo.getY() + alto * 0.0545);
@@ -562,7 +562,7 @@ public class FormulasSimbolos
     //U+00AB
     public static void aperturaComillaEspanola(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -606,7 +606,7 @@ public class FormulasSimbolos
     //U+00BB   
     public static void cierreComillaEspanola(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -650,7 +650,7 @@ public class FormulasSimbolos
     //U+0028  
     public static void aperturaParentesis(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -680,7 +680,7 @@ public class FormulasSimbolos
     //U+0029
     public static void cierreParentesis(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -710,7 +710,7 @@ public class FormulasSimbolos
     //U+005B     
     public static void aperturaCorchete(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -746,7 +746,7 @@ public class FormulasSimbolos
     //U+005D
     public static void cierreCorchete(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -782,7 +782,7 @@ public class FormulasSimbolos
     //U+007B
     public static void aperturaLlave(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -824,7 +824,7 @@ public class FormulasSimbolos
     //U+007D
     public static void cierreLlave(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -866,7 +866,7 @@ public class FormulasSimbolos
     //U+2010
     public static void guion(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -894,7 +894,7 @@ public class FormulasSimbolos
     //U+005F
     public static void guionBajo(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getCursiva()){
@@ -921,7 +921,7 @@ public class FormulasSimbolos
 
     public static void espacio(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (simbolo.getSubrayar())
@@ -938,7 +938,7 @@ public class FormulasSimbolos
 
     public static void acentoCircunflejo(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         gc.strokeLine(simbolo.getX() + ancho * 0.3125, simbolo.getY() + alto * 0.1076, simbolo.getX() + ancho * 0.4687, simbolo.getY() + alto * 0.0461);
@@ -964,7 +964,7 @@ public class FormulasSimbolos
 
     public static void signoMas(GraphicsContext gc, Abecedario simbolo)
     {
-        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(simbolo.getCaracter()), simbolo.getTam());
+        int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(simbolo.getCaracter()), simbolo.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         gc.strokeLine(simbolo.getX() + ancho * 0.3050, simbolo.getY() + alto * 0.6363, simbolo.getX() + ancho * 0.6550, simbolo.getY() + alto * 0.6363);
