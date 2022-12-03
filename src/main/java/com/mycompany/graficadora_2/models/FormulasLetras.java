@@ -84,14 +84,18 @@ public class FormulasLetras
     }
 
     
-    /*public static void atildes(GraphicsContext gc, Abecedario letra) //PROBANDO CODIGO
+    
+    
+    
+    
+    public static void atildes(GraphicsContext gc, Abecedario letra) //PROBANDO CODIGO
     {
         Utilidades.setTamCaracter(letra.getTam());
         int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.esLetraMinuscula(letra.getCaracter()), letra.getTam());
         int ancho = anchoAlto[0];
         int alto = anchoAlto[1];
         if (letra.getCaracter().equals("Á"))
-        {//A Mayuscula
+        {//Á Mayuscula
 
         }
             if (letra.getCursiva()){ //letra cursiva
@@ -100,7 +104,7 @@ public class FormulasLetras
                 gc.strokeArc(letra.getX() + ancho * 0.6545, letra.getY() + alto * 0.4307, ancho * 0.3090, alto * 0.5384, 180, 110, ArcType.OPEN);//Arcos
                 gc.strokeLine(letra.getX() +ancho*0.9090, letra.getY() +alto*0.9272, letra.getX() +ancho*1, letra.getY() +alto*0.8000);
             }else{ //letra normal
-                gc.strokeLine(24, 4, 29, 0);
+                gc.strokeLine(24, 6, 29, 2);
                 gc.strokeArc(letra.getX() + ancho * 0.0727, letra.getY() + alto * 0.1230, ancho * 0.7090, alto * 0.8461, 40, 280, ArcType.OPEN);//Arco
                 gc.strokeLine(letra.getX() + ancho * 0.6909, letra.getY() + alto * 0.2461, letra.getX() + ancho * 0.7090, letra.getY() + alto * 0.8461);//Línea
                 gc.strokeArc(letra.getX() + ancho * 0.7090, letra.getY() + alto * 0.4307, ancho * 0.2727, alto * 0.5384, 180, 170, ArcType.OPEN);//Arcos 
@@ -126,8 +130,8 @@ public class FormulasLetras
                 gc.strokeArc(letra.getX() + ancho * 0.4307, letra.getY() + alto * 0.2727, ancho * 0.0400, alto * 0.0400, 180, 155, ArcType.OPEN);
                 gc.setStroke(Utilidades.color);
             }
-        }
-        else
+        
+        /*else
         {
             if (letra.getCursiva()){ //letra cursiva
                 gc.strokeArc(letra.getX() +ancho*0.1250, letra.getY() +alto*0.6000, ancho*0.6250, alto*0.3636, -30, 180, ArcType.OPEN);
@@ -155,8 +159,8 @@ public class FormulasLetras
                 gc.strokeArc(letra.getX() + ancho * 0.6000, letra.getY() + alto * 0.2500, ancho * 0.0400, alto * 0.0400, 40, 360, ArcType.OPEN);
                 gc.setStroke(Utilidades.color);
             }
-        }
-    }*/
+        }*/
+    }
     
     
     

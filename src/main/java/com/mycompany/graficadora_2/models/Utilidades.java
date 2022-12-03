@@ -86,7 +86,7 @@ public class Utilidades
         return anchoAlto;
     }
     
-    public static int comprobarTildes(String caracter, int alto, int y) //PROBANDO CODIGO
+    public static int moverCarTildes(String caracter, int alto, int y) //PROBANDO CODIGO
     {
         if("Á".equals(caracter) || "á".equals(caracter) || "É".equals(caracter) || "é".equals(caracter) ||
             "Í".equals(caracter) || "í".equals(caracter) || "Ó".equals(caracter) || "ó".equals(caracter) ||
@@ -96,6 +96,7 @@ public class Utilidades
         }
         return y;
     } 
+    
 
     public static void resetearConfig()
     {
@@ -146,7 +147,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masCondif = true;
+                        GraficadoraController.masConfig = true;
                         return i += 9;
                     } //S+K+N+TXX
                     else if (selectorPostTongo.equals("S+K+N+T10") || selectorPostTongo.equals("S+K+N+T11") 
@@ -892,7 +893,8 @@ public class Utilidades
                 }
 
                 //ESTILO SOLO
-                if ((i + 1) < Utilidades.texto.length() && !GraficadoraController.dosConfig && !GraficadoraController.tresConfig)
+                if ((i + 1) < Utilidades.texto.length() && !GraficadoraController.dosConfig
+                   && !GraficadoraController.tresConfig && !GraficadoraController.masConfig)
                 {
                     String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(i + 1));
                     System.out.println("selectorPostTongo: " + selectorPostTongo);
@@ -988,17 +990,6 @@ public class Utilidades
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
     }
 
-    //Método que diferencia entre una letra (mayúscula o minúscula) o un símbolo.
-    public static String esLetraSimbolo(String caracter)
-    {
-        String expresion = "[A-Za-z\\u00f1\\u00d1]";
-        if (Pattern.matches(expresion, caracter))
-        {
-            return "letra";
-        }
-        return "simbolo";
-    }
-
     //Método que valida si el caracter es minúscula o no. (Usos específicos)
     public static String esLetraMinuscula(String caracter)
     {
@@ -1012,7 +1003,7 @@ public class Utilidades
 
     public static String tipoCaracter(String caracter)
     {
-        String expresion1 = "[A-Z\\u00d1]";
+        String expresion1 = "[A-Z\\u00d1\\u00C1]"; //Ñ, Á
         String expresion2 = "[a-z\\u00f1]";
         if (Pattern.matches(expresion1, caracter))
         {
