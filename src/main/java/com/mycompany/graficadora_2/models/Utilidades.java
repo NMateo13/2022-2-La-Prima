@@ -133,7 +133,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //N+K+S+TXX
                     else if (selectorPostTongo.equals("N+K+S+T10") || selectorPostTongo.equals("N+K+S+T11") 
@@ -148,7 +148,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //S+K+N+TXX
                     else if (selectorPostTongo.equals("S+K+N+T10") || selectorPostTongo.equals("S+K+N+T11") 
@@ -163,7 +163,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //S+N+K+TXX
                     else if (selectorPostTongo.equals("S+N+K+T10") || selectorPostTongo.equals("S+N+K+T11") 
@@ -178,7 +178,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //K+N+S+TXX
                     else if (selectorPostTongo.equals("K+N+S+T10") || selectorPostTongo.equals("K+N+S+T11") 
@@ -193,7 +193,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //K+S+N+TXX    
                     else if (selectorPostTongo.equals("K+S+N+T10") || selectorPostTongo.equals("K+S+N+T11") 
@@ -208,7 +208,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //N+S+TXX+K    
                     else if (selectorPostTongo.equals("N+S+T10+K") || selectorPostTongo.equals("N+S+T11+K") 
@@ -223,7 +223,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //N+K+TXX+S     
                     else if (selectorPostTongo.equals("N+K+T10+S") || selectorPostTongo.equals("N+K+T11+S") 
@@ -238,7 +238,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //S+N+TXX+K    
                     else if (selectorPostTongo.equals("S+N+T10+K") || selectorPostTongo.equals("S+N+T11+K") 
@@ -253,7 +253,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //S+K+TXX+N   
                     else if (selectorPostTongo.equals("S+K+T10+N") || selectorPostTongo.equals("S+K+T11+N") 
@@ -268,7 +268,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //K+N+TXX+S     
                     else if (selectorPostTongo.equals("K+N+T10+S") || selectorPostTongo.equals("K+N+T11+S") 
@@ -283,7 +283,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //K+S+TXX+N     
                     else if (selectorPostTongo.equals("K+S+T10+N") || selectorPostTongo.equals("K+S+T11+N") 
@@ -298,7 +298,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //N+TXX+S+K   
                     else if (selectorPostTongo.equals("N+T10+S+K") || selectorPostTongo.equals("N+T11+S+K") 
@@ -313,7 +313,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //N+TXX+K+S   
                     else if (selectorPostTongo.equals("N+T10+K+S") || selectorPostTongo.equals("N+T11+K+S") 
@@ -328,7 +328,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //S+TXX+N+K   
                     else if (selectorPostTongo.equals("S+T10+N+K") || selectorPostTongo.equals("S+T11+N+K") 
@@ -343,7 +343,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //S+TXX+K+N   
                     else if (selectorPostTongo.equals("S+T10+K+N") || selectorPostTongo.equals("S+T11+K+N") 
@@ -358,7 +358,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //K+TXX+N+S   
                     else if (selectorPostTongo.equals("K+T10+N+S") || selectorPostTongo.equals("K+T11+N+S") 
@@ -373,7 +373,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //K+TXX+S+N   
                     else if (selectorPostTongo.equals("K+T10+S+N") || selectorPostTongo.equals("K+T11+S+N") 
@@ -388,7 +388,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //TXX+N+S+K
                     else if (selectorPostTongo.equals("T10+N+S+K") || selectorPostTongo.equals("T11+N+S+K") 
@@ -403,7 +403,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //TXX+N+K+S
                     else if (selectorPostTongo.equals("T10+N+K+S") || selectorPostTongo.equals("T11+N+K+S") 
@@ -418,7 +418,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //TXX+S+N+K
                     else if (selectorPostTongo.equals("T10+S+N+K") || selectorPostTongo.equals("T11+S+N+K") 
@@ -433,7 +433,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //TXX+S+K+N
                     else if (selectorPostTongo.equals("T10+S+K+N") || selectorPostTongo.equals("T11+S+K+N") 
@@ -448,7 +448,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //TXX+K+N+S
                     else if (selectorPostTongo.equals("T10+K+N+S") || selectorPostTongo.equals("T11+K+N+S") 
@@ -463,7 +463,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     } //TXX+K+S+N
                     else if (selectorPostTongo.equals("T10+K+S+N") || selectorPostTongo.equals("T11+K+S+N") 
@@ -478,7 +478,7 @@ public class Utilidades
                         Utilidades.subrayado = true;
                         Utilidades.cursiva = true;
                         GraficadoraController.dibujarTongo = false;
-                        GraficadoraController.masConfig = true;
+                        GraficadoraController.tresConfig = true;
                         return i += 9;
                     }      
                 }    
@@ -895,7 +895,7 @@ public class Utilidades
 
                 //ESTILO SOLO
                 if ((i + 1) < Utilidades.texto.length() && !GraficadoraController.dosConfig
-                   && !GraficadoraController.tresConfig && !GraficadoraController.masConfig)
+                   && !GraficadoraController.tresConfig)
                 {
                     String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(i + 1));
                     System.out.println("selectorPostTongo: " + selectorPostTongo);
@@ -968,7 +968,6 @@ public class Utilidades
             GraficadoraController.unaConfig = false;
             GraficadoraController.dosConfig = false;
             GraficadoraController.tresConfig = false;
-            GraficadoraController.masConfig = false;
         }
     }
 

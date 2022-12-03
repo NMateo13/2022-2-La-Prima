@@ -34,7 +34,6 @@ public class GraficadoraController implements Initializable
     public static Boolean unaConfig;
     public static Boolean dosConfig;
     public static Boolean tresConfig;
-    public static Boolean masConfig;
     public static Boolean dibujarTongo;
 
     @FXML
