@@ -94,13 +94,15 @@ public class FormulasLetras
 
         
             if (letra.getCursiva()){ //letra cursiva
+                //TILDE
+                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 3 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 3 + alto * 0.0307);                
                 gc.strokeArc(letra.getX() + ancho * 0.0727, letra.getY() + alto * 0.1230, ancho * 0.7090, alto * 0.8461, 40, 260, ArcType.OPEN);//Arco
                 gc.strokeLine(letra.getX() + ancho * 0.6909, letra.getY() + alto * 0.2461, letra.getX() + ancho * 0.6562, letra.getY() + alto * 0.8769);//Línea
                 gc.strokeArc(letra.getX() + ancho * 0.6545, letra.getY() + alto * 0.4307, ancho * 0.3090, alto * 0.5384, 180, 110, ArcType.OPEN);//Arcos
                 gc.strokeLine(letra.getX() +ancho*0.9090, letra.getY() +alto*0.9272, letra.getX() +ancho*1, letra.getY() +alto*0.8000);
             }else{ //letra normal
                 //TILDE
-                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 3 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 3 + alto * 0.0307);                //gc.strokeLine(letra.getX() + ancho * 0.4363, letra.getY() + alto * 0.0923, letra.getX() + ancho * 0.5272, letra.getY() + alto * 0.0307);
+                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 3 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 3 + alto * 0.0307);                 
                 gc.strokeArc(letra.getX() + ancho * 0.0727, letra.getY() + alto * 0.1230, ancho * 0.7090, alto * 0.8461, 40, 280, ArcType.OPEN);//Arco
                 gc.strokeLine(letra.getX() + ancho * 0.6909, letra.getY() + alto * 0.2461, letra.getX() + ancho * 0.7090, letra.getY() + alto * 0.8461);//Línea
                 gc.strokeArc(letra.getX() + ancho * 0.7090, letra.getY() + alto * 0.4307, ancho * 0.2727, alto * 0.5384, 180, 170, ArcType.OPEN);//Arcos 
@@ -130,12 +132,14 @@ public class FormulasLetras
         else
         {
             if (letra.getCursiva()){ //letra cursiva
+                //TILDE
+                gc.strokeLine(letra.getX() + (ancho + 4) * 0.4000, letra.getY() + 27 + alto * 0.0923, letra.getX() + (ancho + 4) * 0.4909, letra.getY() + 27 + alto * 0.0307);           
                 gc.strokeArc(letra.getX() +ancho*0.1250, letra.getY() +alto*0.6000, ancho*0.6250, alto*0.3636, -30, 180, ArcType.OPEN);
                 gc.strokeArc(letra.getX() +ancho*0.0781, letra.getY() +alto*0.6000, ancho*0.6250, alto*0.3636, 140, 180, ArcType.OPEN);
                 gc.strokeArc(letra.getX() +ancho*0.6875, letra.getY() +alto*0.6000, ancho*0.2812, alto*0.3636, 200, 130, ArcType.OPEN);
             }else{ //letra normal
                 //TILDE
-                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + 27 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + 27 + alto * 0.0307);                gc.strokeArc(letra.getX() + ancho * 0.0937, letra.getY() + alto * 0.6000, ancho * 0.6875, alto * 0.3636, 360, 360, ArcType.CHORD);
+                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + 27 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + 27 + alto * 0.0307);                
                 gc.strokeArc(letra.getX() + ancho * 0.7968, letra.getY() + alto * 0.6000, ancho * 0.2500, alto * 0.3636, 180, 155, ArcType.OPEN);
             }
             if (letra.getSubrayar())
@@ -504,6 +508,8 @@ public class FormulasLetras
         if (letra.getCaracter().equals("É"))
         {
             if (letra.getCursiva()){ //letra cursiva
+                //TILDE
+                gc.strokeLine(letra.getX() + (ancho + 4) * 0.4000, letra.getY() + - 5 + alto * 0.0923, letra.getX() + (ancho + 4) * 0.4909, letra.getY() + - 5 + alto * 0.0307); 
                 gc.strokeArc(letra.getX() + ancho * 0.1090, letra.getY() + alto * 0.0923, ancho * 0.4909, alto * 0.4615, 10, 200, ArcType.OPEN);//Arco
                 gc.strokeLine(letra.getX() + ancho * 0.1636, letra.getY() + alto * 0.4769, letra.getX() + ancho * 0.3636, letra.getY() + alto * 0.5076);//Línea
                 gc.strokeArc(letra.getX() + ancho * 0.0363, letra.getY() + alto * 0.4769, ancho * 0.8181, alto * 0.4769, 110, 190, ArcType.OPEN);//Arco 
@@ -539,6 +545,8 @@ public class FormulasLetras
         else
         {
             if (letra.getCursiva()){ //letra cursiva
+                //TILDE
+                gc.strokeLine(letra.getX() + (ancho + 10) * 0.4000, letra.getY() + 15 + alto * 0.0923, letra.getX() + (ancho + 10) * 0.4909, letra.getY() + 15 + alto * 0.0307);
                 gc.strokeLine(letra.getX() +ancho*0.0625, letra.getY() +alto*0.7818, letra.getX() +ancho*0.3750, letra.getY() +alto*0.6363);
                 gc.strokeArc(letra.getX() +ancho*-0.0625, letra.getY() +alto*0.0909, ancho*0.6250, alto*0.5818, -60, 30, ArcType.OPEN);
                 gc.strokeArc(letra.getX() +ancho*0.3750, letra.getY() +alto*0.4000, ancho*0.1562, alto*0.1818, 0, 70, ArcType.OPEN);
@@ -547,7 +555,7 @@ public class FormulasLetras
                 gc.strokeLine(letra.getX() +ancho*0.6562, letra.getY() +alto*0.9272, letra.getX() +ancho*0.9375, letra.getY() +alto*0.7818);
             }else{ //letra normal
                 //TILDE
-                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + 15 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + 15 + alto * 0.0307);                gc.strokeLine(letra.getX() + ancho * 0.0625, letra.getY() + alto * 0.7818, letra.getX() + ancho * 0.3125, letra.getY() + alto * 0.6363);
+                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + 15 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + 15 + alto * 0.0307);         
                 gc.strokeArc(letra.getX() + ancho * -0.1875, letra.getY() + alto * 0.0909, ancho * 0.6250, alto * 0.5818, -52, 20, ArcType.OPEN);
                 gc.strokeArc(letra.getX() + ancho * 0.2500, letra.getY() + alto * 0.4000, ancho * 0.1562, alto * 0.1818, 0, 300, ArcType.OPEN);
                 gc.strokeArc(letra.getX() + ancho * 0.2812, letra.getY() + alto * 0.2000, ancho * 0.8125, alto * 0.7636, 200, 120, ArcType.OPEN);
@@ -962,6 +970,8 @@ public class FormulasLetras
         if (letra.getCaracter().equals("Í"))
         {
             if (letra.getCursiva()){ //letra cursiva
+                //TILDE
+                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + -3 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + -3 + alto * 0.0307);
                 gc.strokeArc(letra.getX() + ancho * 0.0909, letra.getY() + alto * -0.1538, ancho * 0.5454, alto * 0.3846, 205, 100, ArcType.OPEN);//Arco
                 gc.strokeLine(letra.getX() + ancho * 0.5818, letra.getY() + alto * 0.1538, letra.getX() + ancho * 0.5272, letra.getY() + alto * 0.7692);//Línea
                 gc.strokeArc(letra.getX() + ancho * 0.1272, letra.getY() + alto * 0.6153, ancho * 0.3818, alto * 0.3846, 170, 200, ArcType.OPEN); //Arcos
@@ -1004,10 +1014,11 @@ public class FormulasLetras
         else
         {
             if (letra.getCursiva()){ //letra cursiva
+                //TILDE
+                gc.strokeLine(letra.getX() + (ancho + 27) * 0.4000, letra.getY() + 30 + alto * 0.0923, letra.getX() + (ancho + 24) * 0.4909, letra.getY() + 30 + alto * 0.0307);
                 gc.strokeArc(letra.getX() +ancho*-0.8437, letra.getY() +alto*0.2545, ancho*1.5625, alto*0.5454, 280, 35, ArcType.OPEN);
                 gc.strokeArc(letra.getX() +ancho*0.5000, letra.getY() +alto*0.6000, ancho*0.6250, alto*0.3636, 140, 90, ArcType.OPEN);
                 gc.strokeArc(letra.getX() +ancho*0.5000, letra.getY() +alto*0.6000, ancho*0.5000, alto*0.3636, 250, 80, ArcType.OPEN);
-                gc.strokeArc(letra.getX() +ancho*0.6875, letra.getY() +alto*0.5090, ancho*0.0625, alto*0.0363, 0, 357, ArcType.CHORD);
             }else{ //letra normal
                 //TILDE
                 gc.strokeLine(letra.getX() + (ancho + 4) * 0.4000, letra.getY() + 30 + alto * 0.0923, letra.getX() + (ancho + 4) * 0.4909, letra.getY() + 30 + alto * 0.0307);
@@ -1023,7 +1034,6 @@ public class FormulasLetras
             {
             gc.strokeArc(letra.getX() + (ancho+3) * -1.0937, letra.getY() + (alto - 3) * 0.3272, (ancho+3) * 1.5625, (alto - 3) * 0.5454, 300, 43, ArcType.OPEN);
             gc.strokeArc(letra.getX() + (ancho+3) * 0.4375, letra.getY() + (alto - 3) * 0.4363, (ancho+3) * 0.6250, (alto - 3) * 0.5454, 175, 160, ArcType.OPEN);
-            gc.strokeArc(letra.getX() + (ancho+3) * 0.4375, letra.getY() + (alto - 3) * 0.5090, (ancho+3) * 0.0625, (alto - 3) * 0.0363, 0, 357, ArcType.CHORD);
             }
             if (Utilidades.puntosDeControl)
             {
@@ -1720,6 +1730,8 @@ public class FormulasLetras
         if (letra.getCaracter().equals("Ó"))
         {
             if (letra.getCursiva()){ //letra cursiva
+                //TILDE
+                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 5 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 5 + alto * 0.0307);
                 gc.strokeArc(letra.getX() + ancho * 0.0727, letra.getY() + alto * 0.0923, ancho * 0.7272, alto * 0.8923, 65, 200, ArcType.OPEN); //Arcos
                 gc.strokeArc(letra.getX() + ancho * 0.0909, letra.getY() + alto * 0.1692, ancho * 0.7272, alto * 0.8000, 255, 130, ArcType.OPEN);
                 gc.strokeArc(letra.getX() + ancho * 0.3909, letra.getY() + alto * 0.2307, ancho * 0.3636, alto * 0.3846, 10, 150, ArcType.OPEN);
@@ -1727,7 +1739,7 @@ public class FormulasLetras
                 gc.strokeArc(letra.getX() + ancho * 0.1636, letra.getY() + alto * 0.5230, ancho * 0.7636, alto * 0.4615, 225, 120, ArcType.OPEN);
             }else{ //letra normal
                 //TILDE
-                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 5 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 5 + alto * 0.0307);                gc.strokeArc(letra.getX() + ancho * 0.0727, letra.getY() + alto * 0.0923, ancho * 0.7272, alto * 0.8923, 85, 200, ArcType.OPEN); //Arcos
+                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 5 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 5 + alto * 0.0307);                
                 gc.strokeArc(letra.getX() + ancho * 0.1090, letra.getY() + alto * 0.1692, ancho * 0.7272, alto * 0.8000, 275, 130, ArcType.OPEN);
                 gc.strokeArc(letra.getX() + ancho * 0.3909, letra.getY() + alto * 0.1846, ancho * 0.3636, alto * 0.3846, 30, 150, ArcType.OPEN);
                 gc.strokeArc(letra.getX() + ancho * 0.3545, letra.getY() + alto * 0.1230, ancho * 0.6363, alto * 0.8461, -230, 80, ArcType.OPEN);
@@ -1766,6 +1778,8 @@ public class FormulasLetras
         else
         {
             if (letra.getCursiva()){ //letra cursiva
+                //TILDE
+                gc.strokeLine(letra.getX() + (ancho + 13) * 0.4000, letra.getY() + 27 + alto * 0.0923, letra.getX() + (ancho + 13) * 0.4909, letra.getY() + 27 + alto * 0.0307);
                 gc.strokeArc(letra.getX() +ancho*0.1250, letra.getY() +alto*0.6000, ancho*0.6250, alto*0.3636, -120, 210, ArcType.OPEN);
                 gc.strokeArc(letra.getX() +ancho*0.0781, letra.getY() +alto*0.6000, ancho*0.6250, alto*0.3636, 140, 105, ArcType.OPEN);
                 gc.strokeArc(letra.getX() +ancho*0.4375, letra.getY() +alto*0.4545, ancho*0.6562, alto*0.4181, 175, 140, ArcType.OPEN);
@@ -2327,6 +2341,8 @@ public class FormulasLetras
         if (letra.getCaracter().equals("Ú"))
         {
             if (letra.getCursiva()){ //letra cursiva
+                //TILDE
+                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 3 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 3 + alto * 0.0307);
                 gc.strokeArc(letra.getX() + ancho * 0.0181, letra.getY() + alto * 0.1076, ancho * 0.2181, alto * 0.3076, -20, 170, ArcType.OPEN);//Arco
                 gc.strokeLine(letra.getX() + ancho * 0.2363, letra.getY() + alto * 0.3076, letra.getX() + ancho * 0.1818, letra.getY() + alto * 0.8000);//Línea
                 gc.strokeArc(letra.getX() + ancho * 0.1818, letra.getY() + alto * 0.6461, ancho * 0.4000, alto * 0.3076, 185, 170, ArcType.OPEN);//Arco
@@ -2334,7 +2350,7 @@ public class FormulasLetras
                 gc.strokeArc(letra.getX() + ancho * 0.5818, letra.getY() + alto * 0.6307, ancho * 0.3636, alto * 0.3384, 185, 160, ArcType.OPEN);//Arco   
             }else{ //letra normal
                 //TILDE
-                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 3 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 3 + alto * 0.0307);                gc.strokeArc(letra.getX() + ancho * 0.0181, letra.getY() + alto * 0.1076, ancho * 0.2181, alto * 0.3076, 0, 170, ArcType.OPEN);//Arco
+                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 3 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 3 + alto * 0.0307);                
                 gc.strokeLine(letra.getX() + ancho * 0.2363, letra.getY() + alto * 0.3076, letra.getX() + ancho * 0.2363, letra.getY() + alto * 0.8000);//Línea
                 gc.strokeArc(letra.getX() + ancho * 0.2363, letra.getY() + alto * 0.6461, ancho * 0.4000, alto * 0.3076, 185, 170, ArcType.OPEN);//Arco
                 gc.strokeLine(letra.getX() + ancho * 0.6363, letra.getY() + alto * 0.1076, letra.getX() + ancho * 0.6363, letra.getY() + alto * 0.8000);//Línea
@@ -2370,6 +2386,8 @@ public class FormulasLetras
         else
         {
             if (letra.getCursiva()){ //letra cursiva
+                //TILDE
+                gc.strokeLine(letra.getX() + (ancho + 15) * 0.4000, letra.getY() + 27 + alto * 0.0923, letra.getX() + (ancho + 15) * 0.4909, letra.getY() + 27 + alto * 0.0307);
                 gc.strokeArc(letra.getX() +ancho*0.0312, letra.getY() +alto*0.6545, ancho*0.3125, alto*0.5090, 90, 80, ArcType.OPEN);
                 gc.strokeArc(letra.getX() +ancho*0.0937, letra.getY() +alto*0.5818, ancho*0.2187, alto*0.3636, -30, 70, ArcType.OPEN);
                 gc.strokeArc(letra.getX() +ancho*0.2968, letra.getY() +alto*0.6181, ancho*0.4062, alto*0.3636, 180, 120, ArcType.OPEN);
