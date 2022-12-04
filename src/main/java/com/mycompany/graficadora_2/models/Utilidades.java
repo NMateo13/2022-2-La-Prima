@@ -31,7 +31,8 @@ public class Utilidades
     //public static int inicioEstilosInt = 1;
     public static int interlineado = 45;
     public static ArrayList<Abecedario> caracteres = new ArrayList<>();
-    public static ArrayList<Abecedario> palabra = new ArrayList<>();
+    public static ArrayList<Abecedario> frase = new ArrayList<>();
+    public static ArrayList<String> palabra = new ArrayList<>();
     public static Double grosorCaracter = 3.5;
     public static int tamCaracter = 0;
     public static int aux = 0;
@@ -147,23 +148,36 @@ public class Utilidades
     
     
     //Método que cambia los estilos de las letras con el símbolo +
-    public static int estilos(int i, String caracter)
+    public static void estilos(int i, String caracter, ArrayList frase)
     {
         if (caracter.equals("^") && i != Utilidades.texto.length() || primerTongo) //Compara el largo del TEXTO
         {
             primerTongo = true;
+            
             coma = false;
+            ArrayList<String> palabra = new ArrayList<>();
             
             if ((i+2) < Utilidades.texto.length())
             {
-                System.out.println("Entra");
-                /*for (int inicioPalabraInt = 2; inicioPalabraInt < Utilidades.texto.length(); inicioPalabraInt++)
+                for (int inicioPalabraInt = i+2; inicioPalabraInt < Utilidades.texto.length(); inicioPalabraInt++) //Se posiciona en el inicio
+                //de la palabra sin contar los estilos
                 {
-                    //inicioPalabraChar = String.valueOf(Utilidades.texto.charAt(inicioPalabraInt));
-                    //Abecedario caracterMomentaneo = new Abecedario(inicioPalabraChar, Utilidades.tipoCaracter(inicioPalabraChar), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                    //palabra.add(caracterMomentaneo);
-                    
-                }*/
+                    String caracterAux = String.valueOf(Utilidades.texto.charAt(inicioPalabraInt));
+                    if(" ".equals(caracterAux)){
+                        for (int j = 0; j < palabra.size(); j++) {
+                             Abecedario caracterMomentaneo = new Abecedario(palabra.get(i), Utilidades.tipoCaracter(palabra.get(i)), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                             frase.add(caracterMomentaneo);
+                        }
+                        palabra.clear();
+                        palabra.add(caracterAux);
+                        Abecedario caracterMomentaneo = new Abecedario(palabra.get(i), Utilidades.tipoCaracter(palabra.get(i)), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                        frase.add(caracterMomentaneo);
+                    }else
+                    {
+                        palabra.add(caracterAux); 
+                    }   
+                    Utilidades.frase = frase;
+                }
             }
             
             
@@ -198,9 +212,18 @@ public class Utilidades
             //i = dosEstilosSimples(i, caracter);
             //i = unEstilo(i, caracter);
 
-            return i;
+        
         }
-        return i;
+      
+    }
+    
+    public static String transformadorObStr(Abecedario palabra){
+        
+        
+        
+        
+        
+        return " ";
     }
 
     

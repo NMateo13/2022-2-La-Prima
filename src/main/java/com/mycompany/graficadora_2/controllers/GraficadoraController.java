@@ -62,19 +62,19 @@ public class GraficadoraController implements Initializable
     private void pintar()
     {
         this.gc.setStroke(Utilidades.color);
-        for (int i = 0; i < Utilidades.caracteres.size(); i++)
+        for (int i = 0; i < Utilidades.frase.size(); i++)
         {
-            if (Utilidades.caracteres.get(i).getTipoCarater().equals("mayuscula"))
+            if (Utilidades.frase.get(i).getTipoCarater().equals("mayuscula"))
             {
-                dibujarLetra(Utilidades.caracteres.get(i));
+                dibujarLetra(Utilidades.frase.get(i));
             }
-            if (Utilidades.caracteres.get(i).getTipoCarater().equals("minuscula"))
+            if (Utilidades.frase.get(i).getTipoCarater().equals("minuscula"))
             {
-                dibujarLetra(Utilidades.caracteres.get(i));
+                dibujarLetra(Utilidades.frase.get(i));
             }
             else
             {
-                dibujarSimbolo(Utilidades.caracteres.get(i));
+                dibujarSimbolo(Utilidades.frase.get(i));
             }
         }
     }
@@ -107,6 +107,7 @@ public class GraficadoraController implements Initializable
         Utilidades.texto = this.texto.getText();
         Utilidades.limpiarCanvas(this.gc, this.canvas); //Limpia el canvas
         ArrayList<Abecedario> caracteres = new ArrayList<>();
+        ArrayList<Abecedario> frase = new ArrayList<>();
         
         
         
@@ -128,8 +129,8 @@ public class GraficadoraController implements Initializable
             
             //retorna la i para seguir con el ciclo
             //i = Utilidades.parseo(i, caracterter);
-            i = Utilidades.estilos(i, caracter); //cambio de estilos de las palabras, con el +
-            Utilidades.ajustarTexto(Utilidades.tamCaracter);
+            Utilidades.parseo(i, caracter, frase); //cambio de estilos de las palabras, con el +
+            //Utilidades.ajustarTexto(Utilidades.tamCaracter);
 
             if (((caracter.equals("^") && dibujarTongo) || !caracter.equals("^"))
                     && !caracter.equals("0") && !caracter.equals("1") && !caracter.equals("2") && !caracter.equals("3") && !caracter.equals("4") && !caracter.equals("5"))
@@ -142,7 +143,7 @@ public class GraficadoraController implements Initializable
                 y = Utilidades.moverCarTildes(caracter, y); //PROBANDO CODIGO
 
                 Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                caracteres.add(caracterMomentaneo); //Agrega a local
+                frase.add(caracterMomentaneo); //Agrega a local
                 //Salto y aplicacion guion
                 x += ancho;
                 if (x > 1150)
@@ -152,7 +153,7 @@ public class GraficadoraController implements Initializable
                         if (Utilidades.texto.charAt(i) != ' ')
                         {
                             Abecedario guion = new Abecedario("-", Utilidades.tipoCaracter("-"), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                            caracteres.add(guion);
+                            frase.add(guion);
                         }
                     }
                     y += alto + Utilidades.interlineado;
@@ -160,7 +161,7 @@ public class GraficadoraController implements Initializable
                 }
             }
         }
-        Utilidades.caracteres = caracteres;
+        Utilidades.frase = frase;
         pintar();
     }
 
