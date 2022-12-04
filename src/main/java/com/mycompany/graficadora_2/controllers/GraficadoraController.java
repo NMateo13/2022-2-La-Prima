@@ -30,7 +30,6 @@ public class GraficadoraController implements Initializable
     @FXML
     private ColorPicker selectorColor;
     public static GraphicsContext gc;
-    ArrayList<Abecedario> caracteres = new ArrayList<>();
     public static Boolean unaConfig;
     public static Boolean dosConfig;
     public static Boolean tresConfig;
@@ -109,6 +108,8 @@ public class GraficadoraController implements Initializable
         Utilidades.limpiarCanvas(this.gc, this.canvas); //Limpia el canvas
         ArrayList<Abecedario> caracteres = new ArrayList<>();
         
+        
+        
         int x = 0;
         int y = 0;
 
@@ -126,6 +127,7 @@ public class GraficadoraController implements Initializable
             tresConfig = false;
             
             //retorna la i para seguir con el ciclo
+            //i = Utilidades.parseo(i, caracterter);
             i = Utilidades.estilos(i, caracter); //cambio de estilos de las palabras, con el +
             Utilidades.ajustarTexto(Utilidades.tamCaracter);
 
@@ -140,7 +142,7 @@ public class GraficadoraController implements Initializable
                 y = Utilidades.moverCarTildes(caracter, y); //PROBANDO CODIGO
 
                 Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                caracteres.add(caracterMomentaneo);
+                caracteres.add(caracterMomentaneo); //Agrega a local
                 //Salto y aplicacion guion
                 x += ancho;
                 if (x > 1150)

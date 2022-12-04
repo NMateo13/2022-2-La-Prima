@@ -20,12 +20,18 @@ public class Utilidades
     public static Boolean cursiva = false;
     public static Boolean invertir = false;
     public static Boolean tamanos = false;
+    public static Boolean coma = false;
     public static Boolean primerTongo = false;
     public static Boolean puntosDeControl = false;
     public static int[] tamCanvas = new int[2];
     public static String texto = "";
+    public static String inicioPalabraChar = "";
+    public static String inicioEstilosChar = "";
+    //public static int inicioPalabraInt = 2;
+    //public static int inicioEstilosInt = 1;
     public static int interlineado = 45;
     public static ArrayList<Abecedario> caracteres = new ArrayList<>();
+    public static ArrayList<Abecedario> palabra = new ArrayList<>();
     public static Double grosorCaracter = 3.5;
     public static int tamCaracter = 0;
     public static int aux = 0;
@@ -118,17 +124,79 @@ public class Utilidades
         System.out.println("subrayado en reseteo: " + subrayado);
     }
     
-    //Método que cambia los estilos de las letras con el símbolo +
-    public static int estilos(int i, String caracter)
+    //public static void 
+    
+    public static int parseo(int i, String caracter)
     {
         if (caracter.equals("^") && i != Utilidades.texto.length() - 1) //Compara el largo del TEXTO
         {
             primerTongo = true;
+            coma = false;
+            
+            for (int j = i+1; j < Utilidades.texto.length(); j++) {
+                System.out.println("Hola");
+            }
+            
+            
+            
+        } 
+        return i;
+    }     
+    
+      
+    
+    
+    //Método que cambia los estilos de las letras con el símbolo +
+    public static int estilos(int i, String caracter)
+    {
+        if (caracter.equals("^") && i != Utilidades.texto.length() || primerTongo) //Compara el largo del TEXTO
+        {
+            primerTongo = true;
+            coma = false;
+            
+            if ((i+2) < Utilidades.texto.length())
+            {
+                System.out.println("Entra");
+                /*for (int inicioPalabraInt = 2; inicioPalabraInt < Utilidades.texto.length(); inicioPalabraInt++)
+                {
+                    //inicioPalabraChar = String.valueOf(Utilidades.texto.charAt(inicioPalabraInt));
+                    //Abecedario caracterMomentaneo = new Abecedario(inicioPalabraChar, Utilidades.tipoCaracter(inicioPalabraChar), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                    //palabra.add(caracterMomentaneo);
+                    
+                }*/
+            }
+            
+            
+            /*if ((i+1 < Utilidades.texto.length()-1))
+            {
+                inicioEstilos = String.valueOf(Utilidades.texto.charAt(i));
+    
+                if ((i+2 < Utilidades.texto.length()))
+                {
+                    
+                }
+                
+                for (int j = i+1; j < Utilidades.texto.length(); j++) {
+                    
+                    inicioPalabra = String.valueOf(Utilidades.texto.charAt(j));
+                    
+                    if  ((i+2 < Utilidades.texto.length()))
+                    {
+                        for (int k = j+1; k < Utilidades.texto.length(); k++) {
+                            inicioEstilos = String.valueOf(Utilidades.texto.charAt(k));
+                            System.out.println("Hola");
+                        }
+    
+                    }   
+                }
+            }*/
+            
+            
 
-            i = cuatroEstilosSimples(i, caracter);    
-            i = tresEstilosSimples(i,caracter);
-            i = dosEstilosSimples(i, caracter);
-            i = unEstilo(i, caracter);
+            //i = cuatroEstilosSimples(i, caracter);    
+            //i = tresEstilosSimples(i,caracter);
+            //i = dosEstilosSimples(i, caracter);
+            //i = unEstilo(i, caracter);
 
             return i;
         }
