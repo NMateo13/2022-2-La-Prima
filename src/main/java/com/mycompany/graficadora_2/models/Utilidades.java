@@ -3,7 +3,9 @@ package com.mycompany.graficadora_2.models;
 //Importación librerías utilizadas
 import com.mycompany.graficadora_2.controllers.GraficadoraController;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -23,6 +25,9 @@ public class Utilidades
     public static Boolean coma = false;
     public static Boolean primerTongo = false;
     public static Boolean puntosDeControl = false;
+    public static Boolean banderaEstilos = false;
+    public static Boolean guion = false;
+    
     public static int[] tamCanvas = new int[2];
     public static String texto = "";
     public static String inicioPalabraChar = "";
@@ -30,17 +35,18 @@ public class Utilidades
     //public static int inicioPalabraInt = 2;
     //public static int inicioEstilosInt = 1;
     public static int interlineado = 45;
-    public static ArrayList<Abecedario> caracteres = new ArrayList<>();
-    public static ArrayList<Abecedario> frase = new ArrayList<>();
-    public static ArrayList<String> palabra = new ArrayList<>();
+                    public static ArrayList<Abecedario> caracteres = new ArrayList<>();
+                    public static ArrayList<Abecedario> frase = new ArrayList<>();
+                    public static ArrayList<Abecedario> estilos = new ArrayList<>();
+                    public static ArrayList<String> palabra = new ArrayList<>();
+                    public static ArrayList<String> fraseStr = new ArrayList<>();
+    public static int contadorGuion = 1;                
     public static Double grosorCaracter = 3.5;
     public static int tamCaracter = 0;
     public static int aux = 0;
     public static int inicio = 2;
     public static int contador = 1;
-    public static List<String> palabras = new ArrayList<>();
-    public static int x = 0;
-    public static int y = 0;
+                    public static List<String> palabras = new ArrayList<>();
     
     GraficadoraController pizarra = new GraficadoraController();
 
@@ -101,7 +107,7 @@ public class Utilidades
         return anchoAlto;
     }
     
-    public static int moverCarTildes(String caracter, int y) //PROBANDO CODIGO
+   /* public static int moverCarTildes(String caracter, int y) //PROBANDO CODIGO
     {
         if("Á".equals(caracter) || "É".equals(caracter)|| "Í".equals(caracter)
         || "Ó".equals(caracter) || "Ú".equals(caracter))
@@ -111,7 +117,7 @@ public class Utilidades
             }
         }
         return y;
-    } 
+    } */
     
 
     public static void resetearConfig()
@@ -126,105 +132,160 @@ public class Utilidades
     }
     
     //public static void 
-    
-    public static int parseo(int i, String caracter)
-    {
-        if (caracter.equals("^") && i != Utilidades.texto.length() - 1) //Compara el largo del TEXTO
-        {
-            primerTongo = true;
-            coma = false;
-            
-            for (int j = i+1; j < Utilidades.texto.length(); j++) {
-                System.out.println("Hola");
-            }
-            
-            
-            
-        } 
-        return i;
-    }     
-    
       
-    
-    
     //Método que cambia los estilos de las letras con el símbolo +
-    public static void estilos(int i, String caracter, ArrayList frase)
+    public static int dividirTexto(int i, String caracter, ArrayList frase, 
+    ArrayList caracteres, int x, int y, int ancho, int alto)
     {
         if (caracter.equals("^") && i != Utilidades.texto.length() || primerTongo) //Compara el largo del TEXTO
         {
             primerTongo = true;
-            
+            banderaEstilos = true;
+            GraficadoraController.banderaEstilos2 = true;
             coma = false;
-            ArrayList<String> palabra = new ArrayList<>();
             
-            if ((i+2) < Utilidades.texto.length())
+           
+            
+            ArrayList<Abecedario> palabra = new ArrayList<>();
+            ArrayList<Abecedario> estilos = new ArrayList<>();
+
+
+            
+            if ("N".equals(caracter) || "S".equals(caracter) || "K".equals(caracter) || "^".equals(caracter)
+            || ",".equals(caracter)  || "+".equals(caracter) || " ".equals(caracter))
             {
-                for (int inicioPalabraInt = i+2; inicioPalabraInt < Utilidades.texto.length(); inicioPalabraInt++) //Se posiciona en el inicio
-                //de la palabra sin contar los estilos
+                Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                estilos.add(caracterMomentaneo);
+                caracteres.add(caracterMomentaneo);
+                //estilosStr.add(caracter);
+
+            }else{
+                frase.add(estilos);
+                banderaEstilos = false;
+            }   
+            
+            
+            if (!banderaEstilos)
+            {
+               for (int inicioPalabraInt = i; inicioPalabraInt < Utilidades.texto.length(); inicioPalabraInt++) //Se posiciona en el inicio
+                //de la palabra sin contar los estilos 
                 {
-                    String caracterAux = String.valueOf(Utilidades.texto.charAt(inicioPalabraInt));
-                    if(" ".equals(caracterAux)){
+                    String inicioPalabra = String.valueOf(Utilidades.texto.charAt(inicioPalabraInt));
+                    if (" ".equals(inicioPalabra))
+                    {
+                        frase.add(palabra);
+                        palabra.clear();
+                        Abecedario caracterMomentaneo = new Abecedario(inicioPalabra, Utilidades.tipoCaracter(inicioPalabra), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                        palabra.add(caracterMomentaneo);
+                        caracteres.add(caracterMomentaneo);
+                        frase.add(caracterMomentaneo);
+                        x += ancho;
+                        
+                        
+                    }else
+                    {
+                        Abecedario caracterMomentaneo = new Abecedario(inicioPalabra, Utilidades.tipoCaracter(inicioPalabra), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                        palabra.add(caracterMomentaneo);
+                        caracteres.add(caracterMomentaneo);
+                        x += ancho;
+                    }
+                    
+                    return x;
+                    
+                } 
+            }    
+            
+           
+            return x+= ancho;
+            
+            
+            
+            //for (int z = 0; z < Utilidades.texto.length()+1; z++) {
+                
+              /*if ((i+2) < Utilidades.texto.length())
+              {
+                for (int inicioEstilosInt = i; inicioEstilosInt < Utilidades.texto.length(); inicioEstilosInt++) {
+                    String caracter = String.valueOf(Utilidades.texto.charAt(inicioEstilosInt));
+                    if ("N".equals(caracter) || "S".equals(caracter) || "K".equals(caracter) || "^".equals(caracter)
+                        || ",".equals(caracter)  || "+".equals(caracter) || " ".equals(caracter))
+                    {
+                        Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                        estilos.add(caracterMomentaneo);
+                        caracteres.add(caracterMomentaneo);
+                        //estilosStr.add(caracter);
+                        
+                    }else{
+                        frase.add(estilos);
+                        break;
+                    }   
+                }
+                
+                for (int inicioPalabraInt = i+2; inicioPalabraInt < Utilidades.texto.length(); inicioPalabraInt++) //Se posiciona en el inicio
+                //de la palabra sin contar los estilos 
+                {
+                    String inicioPalabra = String.valueOf(Utilidades.texto.charAt(inicioPalabraInt));
+                    if (" ".equals(inicioPalabra))
+                    {
+                        frase.add(palabra);
+                        palabra.clear();
+                        Abecedario caracterMomentaneo = new Abecedario(inicioPalabra, Utilidades.tipoCaracter(inicioPalabra), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                        palabra.add(caracterMomentaneo);
+                        caracteres.add(caracterMomentaneo);
+                        frase.add(caracterMomentaneo);
+                    }else
+                    {
+                        Abecedario caracterMomentaneo = new Abecedario(inicioPalabra, Utilidades.tipoCaracter(inicioPalabra), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                        palabra.add(caracterMomentaneo);
+                        caracteres.add(caracterMomentaneo);
+                    }    */
+                    /*String inicioPalabra = String.valueOf(Utilidades.texto.charAt(inicioPalabraInt));
+                    if(" ".equals(inicioPalabra)){
+                        
                         for (int j = 0; j < palabra.size(); j++) {
                              Abecedario caracterMomentaneo = new Abecedario(palabra.get(i), Utilidades.tipoCaracter(palabra.get(i)), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
                              frase.add(caracterMomentaneo);
+                             
                         }
                         palabra.clear();
-                        palabra.add(caracterAux);
+                        palabra.add(inicioPalabra);
                         Abecedario caracterMomentaneo = new Abecedario(palabra.get(i), Utilidades.tipoCaracter(palabra.get(i)), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
                         frase.add(caracterMomentaneo);
                     }else
                     {
-                        palabra.add(caracterAux); 
-                    }   
-                    Utilidades.frase = frase;
-                }
-            }
-            
-            
-            /*if ((i+1 < Utilidades.texto.length()-1))
-            {
-                inicioEstilos = String.valueOf(Utilidades.texto.charAt(i));
-    
-                if ((i+2 < Utilidades.texto.length()))
-                {
+                                                Abecedario caracterMomentaneo = new Abecedario(palabra.get(i), Utilidades.tipoCaracter(palabra.get(i)), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                        palabra.add(inicioPalabra); //ArayyList   
                     
-                }
-                
-                for (int j = i+1; j < Utilidades.texto.length(); j++) {
-                    
-                    inicioPalabra = String.valueOf(Utilidades.texto.charAt(j));
-                    
-                    if  ((i+2 < Utilidades.texto.length()))
-                    {
-                        for (int k = j+1; k < Utilidades.texto.length(); k++) {
-                            inicioEstilos = String.valueOf(Utilidades.texto.charAt(k));
-                            System.out.println("Hola");
-                        }
-    
-                    }   
-                }
+                Utilidades.caracteres = caracteres;   
+                Utilidades.frase = frase;
+                }  
             }*/
-            
-            
-
-            //i = cuatroEstilosSimples(i, caracter);    
-            //i = tresEstilosSimples(i,caracter);
-            //i = dosEstilosSimples(i, caracter);
-            //i = unEstilo(i, caracter);
-
-        
         }
-      
+        return x;
     }
     
-    public static String transformadorObStr(Abecedario palabra){
+    public static void validarSigla(List estilos)
+    {
+                   
+        
+        
+        
+        
+    
+    }    
+    
+    /*public static void activar()
+    {
+        if()
+    }*/
+    
+    /*public static String transformadorObStr(Abecedario palabra){
         
         
         
         
         
         return " ";
-    }
+    }*/
 
     
     public static void desactivarEstilos(String caracter)
