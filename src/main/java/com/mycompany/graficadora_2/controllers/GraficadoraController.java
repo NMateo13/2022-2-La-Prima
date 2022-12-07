@@ -112,9 +112,6 @@ public class GraficadoraController implements Initializable
         ArrayList<Abecedario> frase = new ArrayList<>(); //Frase ArrayList
         int x = 0;
         int y = 0;
-        
-        
-
 
         for (int i = 0; i < Utilidades.texto.length(); i++)
         {
@@ -122,29 +119,24 @@ public class GraficadoraController implements Initializable
             String caracter = String.valueOf(Utilidades.texto.charAt(i)); //crea y recibe el caracter correspondiente
 
             //pregunta si es un tongo para saber si es negrita subrayado o cursiva
-            //Boolean dosConfig = false;
-            //Boolean tresConfig = false;
             unaConfig = false;
             dosConfig = false;
             tresConfig = false;
-            //Utilidades.dividirTexto(i, caracter, frase, caracteres); //
             
             int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(caracter), Utilidades.tamCaracter);
             int ancho = anchoAlto[0];
             int alto = anchoAlto[1];
             
-            if ((caracter.equals("^") && dibujarTongo) || Utilidades.banderaEstilos){
+            if ((caracter.equals("^") && dibujarTongo) || Utilidades.banderaEstilos || Utilidades.primerTongo){
                 x = Utilidades.dividirTexto(i, caracter, frase, caracteres, x, y, ancho, alto); //
-
             }
             else if (!"^".equals(caracter) && !"0".equals(caracter) && !"1".equals(caracter) && !"2".equals(caracter)
-            && !"3".equals(caracter) && !"4".equals(caracter) && !"5".equals(caracter) && !Utilidades.banderaEstilos)
+            && !"3".equals(caracter) && !"4".equals(caracter) && !"5".equals(caracter) && !Utilidades.banderaEstilos
+            )
             {
-                
                 Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
                 caracteres.add(caracterMomentaneo);
                 x += ancho;
- 
             } 
             
             if (x > 1150)
@@ -160,50 +152,11 @@ public class GraficadoraController implements Initializable
                 y += alto + Utilidades.interlineado;
                 x = 0;
             }
-            //y = Utilidades.moverCarTildes(caracter, y); //PROBANDO CODIGO
-            
-    //            Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-    //        caracteres.add(caracterMomentaneo);
-
-            
-            /*if (((caracter.equals("^") && dibujarTongo) || !caracter.equals("^"))
-                    && !caracter.equals("0") && !caracter.equals("1") && !caracter.equals("2") && !caracter.equals("3") && !caracter.equals("4") && !caracter.equals("5"))
-            {
-                
-                int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(caracter), Utilidades.tamCaracter);
-                int ancho = anchoAlto[0];
-                int alto = anchoAlto[1];
-                
-                y = Utilidades.moverCarTildes(caracter, y); //PROBANDO CODIGO
-
-               
-                Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                caracteres.add(caracterMomentaneo); //Agrega a local
-                   
-
-                //Salto y aplicacion guion
-                x += ancho;
-                if (x > 1150)
-                {
-                    for (int j = 0; j < Utilidades.texto.length(); j++)
-                    {
-                        if (Utilidades.texto.charAt(i) != ' ')
-                        {
-                            Abecedario guion = new Abecedario("-", Utilidades.tipoCaracter("-"), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                            frase.add(guion);
-                        }
-                    }
-                    y += alto + Utilidades.interlineado;
-                    x = 0;
-                }
-            }*/
         }
         Utilidades.frase = caracteres;
         pintar();
     }
     
-    
-
     //Método encargado de validar que símbolo será dibujado.
     private void dibujarSimbolo(Abecedario caracter)
     {

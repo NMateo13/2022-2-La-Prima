@@ -3,15 +3,11 @@ package com.mycompany.graficadora_2.models;
 //Importación librerías utilizadas
 import com.mycompany.graficadora_2.controllers.GraficadoraController;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Pattern;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.ArcType;
-import static jdk.vm.ci.meta.JavaKind.Char;
 
 public class Utilidades
 {
@@ -22,11 +18,13 @@ public class Utilidades
     public static Boolean cursiva = false;
     public static Boolean invertir = false;
     public static Boolean tamanos = false;
-    public static Boolean coma = false;
+    //public static Boolean coma = false;
     public static Boolean primerTongo = false;
     public static Boolean puntosDeControl = false;
     public static Boolean banderaEstilos = false;
     public static Boolean guion = false;
+    public static Boolean sepPalabras = false;
+    public static Boolean dividirTexto = false;    
     
     public static int[] tamCanvas = new int[2];
     public static String texto = "";
@@ -140,26 +138,23 @@ public class Utilidades
         if (caracter.equals("^") && i != Utilidades.texto.length() || primerTongo) //Compara el largo del TEXTO
         {
             primerTongo = true;
-            banderaEstilos = true;
-            GraficadoraController.banderaEstilos2 = true;
-            coma = false;
-            
-           
-            
+            dividirTexto = true;
+
+            //coma = false;
+                   
             ArrayList<Abecedario> palabra = new ArrayList<>();
             ArrayList<Abecedario> estilos = new ArrayList<>();
-
-
             
             if ("N".equals(caracter) || "S".equals(caracter) || "K".equals(caracter) || "^".equals(caracter)
-            || ",".equals(caracter)  || "+".equals(caracter) || " ".equals(caracter))
+            || ",".equals(caracter)  || "+".equals(caracter))
             {
+                banderaEstilos = true;
                 Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
                 estilos.add(caracterMomentaneo);
                 caracteres.add(caracterMomentaneo);
-                //estilosStr.add(caracter);
 
-            }else{
+            }else if (banderaEstilos && !sepPalabras)
+            {
                 frase.add(estilos);
                 banderaEstilos = false;
             }   
@@ -184,12 +179,14 @@ public class Utilidades
                         
                     }else
                     {
+                        sepPalabras = true;
                         Abecedario caracterMomentaneo = new Abecedario(inicioPalabra, Utilidades.tipoCaracter(inicioPalabra), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
                         palabra.add(caracterMomentaneo);
                         caracteres.add(caracterMomentaneo);
                         x += ancho;
+                        
                     }
-                    
+                    sepPalabras = false;
                     return x;
                     
                 } 
@@ -263,11 +260,8 @@ public class Utilidades
         return x;
     }
     
-    public static void validarSigla(List estilos)
+    public static void validarSiglas(String caracter, int i)
     {
-                   
-        
-        
         
         
     
@@ -1177,7 +1171,7 @@ public class Utilidades
             }
             else if (selectorPostTongo.equals("R"))
             {
-                Utilidades.invertirTexto();
+
                 GraficadoraController.dibujarTongo = false;
                 return i+=1;
             }
@@ -1185,26 +1179,7 @@ public class Utilidades
         return i; 
    }        
    
-    public static void invertirTexto()
-    {
-        for (int i = 0; i < Utilidades.texto.length(); i++) {
-
-            if(Utilidades.texto.length()>2 && Utilidades.texto.charAt(i) == ' ') //validación necesaria para ignorar tongo y R
-            { 
-                
-                
-                
-                char caracter = Utilidades.texto.charAt(i);
-                String palabra = Utilidades.texto.substring(inicio, i);
-                palabras.add(palabra);
-                //contador +=1;
-                System.out.println(palabras.get(contador));
-                contador +=1;
-                
-            }
-        }
-        
-    }
+    
 
     //Expresiones regulares utilizadas para validar los caracteres que se ingresan.
     //Método dónde se validan caracteres que se pueden ingresar al programa.
