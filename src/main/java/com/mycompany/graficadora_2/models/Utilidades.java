@@ -35,9 +35,7 @@ public class Utilidades
     public static int interlineado = 45;
                     public static ArrayList<Abecedario> caracteres = new ArrayList<>();
                     public static ArrayList<Abecedario> frase = new ArrayList<>();
-                    public static ArrayList<Abecedario> estilos = new ArrayList<>();
-                    public static ArrayList<String> palabra = new ArrayList<>();
-                    public static ArrayList<String> fraseStr = new ArrayList<>();
+                    public static ArrayList<Abecedario> estilosArray = new ArrayList<>();
     public static int contadorGuion = 1;                
     public static Double grosorCaracter = 3.5;
     public static int tamCaracter = 0;
@@ -105,17 +103,17 @@ public class Utilidades
         return anchoAlto;
     }
     
-   /* public static int moverCarTildes(String caracter, int y) //PROBANDO CODIGO
+    public static int moverCarTildes(String caracter, int y, int x) //PROBANDO CODIGO
     {
         if("Á".equals(caracter) || "É".equals(caracter)|| "Í".equals(caracter)
         || "Ó".equals(caracter) || "Ú".equals(caracter))
         {
-            if( x == 0 && y == 0){
+            if(y == 0 && x == 0){
                 return y = y+5;
             }
         }
         return y;
-    } */
+    } 
     
 
     public static void resetearConfig()
@@ -140,8 +138,6 @@ public class Utilidades
             primerTongo = true;
             dividirTexto = true;
 
-            //coma = false;
-                   
             ArrayList<Abecedario> palabra = new ArrayList<>();
             ArrayList<Abecedario> estilos = new ArrayList<>();
             
@@ -156,9 +152,9 @@ public class Utilidades
             }else if (banderaEstilos && !sepPalabras)
             {
                 frase.add(estilos);
+                Utilidades.estilosArray = estilos;
                 banderaEstilos = false;
-            }   
-            
+            }
             
             if (!banderaEstilos)
             {
@@ -175,8 +171,6 @@ public class Utilidades
                         caracteres.add(caracterMomentaneo);
                         frase.add(caracterMomentaneo);
                         x += ancho;
-                        
-                        
                     }else
                     {
                         sepPalabras = true;
@@ -187,100 +181,81 @@ public class Utilidades
                         
                     }
                     sepPalabras = false;
-                    return x;
-                    
+                    return x;                    
                 } 
-            }    
-            
-           
+            }       
             return x+= ancho;
-            
-            
-            
-            //for (int z = 0; z < Utilidades.texto.length()+1; z++) {
-                
-              /*if ((i+2) < Utilidades.texto.length())
-              {
-                for (int inicioEstilosInt = i; inicioEstilosInt < Utilidades.texto.length(); inicioEstilosInt++) {
-                    String caracter = String.valueOf(Utilidades.texto.charAt(inicioEstilosInt));
-                    if ("N".equals(caracter) || "S".equals(caracter) || "K".equals(caracter) || "^".equals(caracter)
-                        || ",".equals(caracter)  || "+".equals(caracter) || " ".equals(caracter))
-                    {
-                        Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                        estilos.add(caracterMomentaneo);
-                        caracteres.add(caracterMomentaneo);
-                        //estilosStr.add(caracter);
-                        
-                    }else{
-                        frase.add(estilos);
-                        break;
-                    }   
-                }
-                
-                for (int inicioPalabraInt = i+2; inicioPalabraInt < Utilidades.texto.length(); inicioPalabraInt++) //Se posiciona en el inicio
-                //de la palabra sin contar los estilos 
-                {
-                    String inicioPalabra = String.valueOf(Utilidades.texto.charAt(inicioPalabraInt));
-                    if (" ".equals(inicioPalabra))
-                    {
-                        frase.add(palabra);
-                        palabra.clear();
-                        Abecedario caracterMomentaneo = new Abecedario(inicioPalabra, Utilidades.tipoCaracter(inicioPalabra), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                        palabra.add(caracterMomentaneo);
-                        caracteres.add(caracterMomentaneo);
-                        frase.add(caracterMomentaneo);
-                    }else
-                    {
-                        Abecedario caracterMomentaneo = new Abecedario(inicioPalabra, Utilidades.tipoCaracter(inicioPalabra), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                        palabra.add(caracterMomentaneo);
-                        caracteres.add(caracterMomentaneo);
-                    }    */
-                    /*String inicioPalabra = String.valueOf(Utilidades.texto.charAt(inicioPalabraInt));
-                    if(" ".equals(inicioPalabra)){
-                        
-                        for (int j = 0; j < palabra.size(); j++) {
-                             Abecedario caracterMomentaneo = new Abecedario(palabra.get(i), Utilidades.tipoCaracter(palabra.get(i)), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                             frase.add(caracterMomentaneo);
-                             
-                        }
-                        palabra.clear();
-                        palabra.add(inicioPalabra);
-                        Abecedario caracterMomentaneo = new Abecedario(palabra.get(i), Utilidades.tipoCaracter(palabra.get(i)), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                        frase.add(caracterMomentaneo);
-                    }else
-                    {
-                                                Abecedario caracterMomentaneo = new Abecedario(palabra.get(i), Utilidades.tipoCaracter(palabra.get(i)), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                        palabra.add(inicioPalabra); //ArayyList   
-                    
-                Utilidades.caracteres = caracteres;   
-                Utilidades.frase = frase;
-                }  
-            }*/
         }
         return x;
     }
     
-    public static void validarSiglas(String caracter, int i)
+    /*public static void activarEstilos()
     {
-        
-        
-    
-    }    
-    
-    /*public static void activar()
-    {
-        if()
-    }*/
-    
-    /*public static String transformadorObStr(Abecedario palabra){
-        
-        
-        
-        
-        
-        return " ";
-    }*/
+        if (!banderaEstilos)
+        {
+            for (int i = 0; i < estilosGlobal.size(); i++)
+            {
+                String caracter = estilosGlobal.get(i).getCaracter();
+                switch(caracter)
+                {
+                    case "N": 
+                        Utilidades.desactivarEstilos(caracter);
 
+                        Utilidades.negrita = true;
+                        GraficadoraController.dibujarTongo = false;
+                        GraficadoraController.unaConfig = true; 
+                        break;
+                        
+                }    
+            }
+        }
+    }    */
+ 
+    public static int unEstilo(int i, String caracter)
+   {
+        //ESTILO SOLO
+        if ((i + 1) < Utilidades.texto.length() && !GraficadoraController.dosConfig
+           && !GraficadoraController.tresConfig)
+        {
+            String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(i + 1));
+            System.out.println("selectorPostTongo: " + selectorPostTongo);
+            if (selectorPostTongo.equals("N"))
+            {
+
+                Utilidades.desactivarEstilos(caracter);
+
+                Utilidades.negrita = true;
+                GraficadoraController.dibujarTongo = false;
+                GraficadoraController.unaConfig = true;
+                return i += 1;
+            }
+            else if (selectorPostTongo.equals("S"))
+            {
+                Utilidades.desactivarEstilos(caracter);
+
+                Utilidades.subrayado = true;
+                GraficadoraController.dibujarTongo = false;
+                GraficadoraController.unaConfig = true;
+                return i += 1;
+            }
+            else if (selectorPostTongo.equals("K"))
+            {
+                Utilidades.desactivarEstilos(caracter);
+
+                Utilidades.cursiva = true;
+                GraficadoraController.dibujarTongo = false;
+                GraficadoraController.unaConfig = true;
+                return i += 1;
+            }
+            else if (selectorPostTongo.equals("R"))
+            {
+
+                GraficadoraController.dibujarTongo = false;
+                return i+=1;
+            }
+        }
+        return i; 
+   }        
     
     public static void desactivarEstilos(String caracter)
     {
@@ -1133,51 +1108,7 @@ public class Utilidades
         return i;
    }      
    
-   public static int unEstilo(int i, String caracter)
-   {
-        //ESTILO SOLO
-        if ((i + 1) < Utilidades.texto.length() && !GraficadoraController.dosConfig
-           && !GraficadoraController.tresConfig)
-        {
-            String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(i + 1));
-            System.out.println("selectorPostTongo: " + selectorPostTongo);
-            if (selectorPostTongo.equals("N"))
-            {
-
-                Utilidades.desactivarEstilos(caracter);
-
-                Utilidades.negrita = true;
-                GraficadoraController.dibujarTongo = false;
-                GraficadoraController.unaConfig = true;
-                return i += 1;
-            }
-            else if (selectorPostTongo.equals("S"))
-            {
-                Utilidades.desactivarEstilos(caracter);
-
-                Utilidades.subrayado = true;
-                GraficadoraController.dibujarTongo = false;
-                GraficadoraController.unaConfig = true;
-                return i += 1;
-            }
-            else if (selectorPostTongo.equals("K"))
-            {
-                Utilidades.desactivarEstilos(caracter);
-
-                Utilidades.cursiva = true;
-                GraficadoraController.dibujarTongo = false;
-                GraficadoraController.unaConfig = true;
-                return i += 1;
-            }
-            else if (selectorPostTongo.equals("R"))
-            {
-
-                GraficadoraController.dibujarTongo = false;
-                return i+=1;
-            }
-        }
-        return i; 
-   }        
+   
    
     
 

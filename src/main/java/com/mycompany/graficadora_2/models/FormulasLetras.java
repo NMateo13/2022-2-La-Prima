@@ -139,7 +139,8 @@ public class FormulasLetras
                 gc.strokeArc(letra.getX() +ancho*0.6875, letra.getY() +alto*0.6000, ancho*0.2812, alto*0.3636, 200, 130, ArcType.OPEN);
             }else{ //letra normal
                 //TILDE
-                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + 27 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + 27 + alto * 0.0307);                
+                gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + 27 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + 27 + alto * 0.0307);
+                gc.strokeArc(letra.getX() + ancho * 0.0937, letra.getY() + alto * 0.6000, ancho * 0.6875, alto * 0.3636, 360, 360, ArcType.CHORD);                
                 gc.strokeArc(letra.getX() + ancho * 0.7968, letra.getY() + alto * 0.6000, ancho * 0.2500, alto * 0.3636, 180, 155, ArcType.OPEN);
             }
             if (letra.getSubrayar())
@@ -555,6 +556,7 @@ public class FormulasLetras
                 gc.strokeLine(letra.getX() +ancho*0.6562, letra.getY() +alto*0.9272, letra.getX() +ancho*0.9375, letra.getY() +alto*0.7818);
             }else{ //letra normal
                 //TILDE
+                gc.strokeLine(letra.getX() + ancho * 0.0625, letra.getY() + alto * 0.7818, letra.getX() + ancho * 0.3125, letra.getY() + alto * 0.6363);
                 gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + 15 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + 15 + alto * 0.0307);         
                 gc.strokeArc(letra.getX() + ancho * -0.1875, letra.getY() + alto * 0.0909, ancho * 0.6250, alto * 0.5818, -52, 20, ArcType.OPEN);
                 gc.strokeArc(letra.getX() + ancho * 0.2500, letra.getY() + alto * 0.4000, ancho * 0.1562, alto * 0.1818, 0, 300, ArcType.OPEN);
@@ -586,10 +588,6 @@ public class FormulasLetras
         }
     }
     
-    
-    
-    
-
     public static void f(GraphicsContext gc, Abecedario letra)
     {
         Utilidades.setTamCaracter(letra.getTam());
@@ -1732,7 +1730,7 @@ public class FormulasLetras
             if (letra.getCursiva()){ //letra cursiva
                 //TILDE
                 gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 5 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 5 + alto * 0.0307);
-                gc.strokeArc(letra.getX() + ancho * 0.0727, letra.getY() + alto * 0.0923, ancho * 0.7272, alto * 0.8923, 65, 200, ArcType.OPEN); //Arcos
+                gc.strokeArc(letra.getX() + ancho * 0.0727, letra.getY() + alto * 0.0923, ancho * 0.7272, alto * 0.8923, 85, 200, ArcType.OPEN); //Arcos
                 gc.strokeArc(letra.getX() + ancho * 0.0909, letra.getY() + alto * 0.1692, ancho * 0.7272, alto * 0.8000, 255, 130, ArcType.OPEN);
                 gc.strokeArc(letra.getX() + ancho * 0.3909, letra.getY() + alto * 0.2307, ancho * 0.3636, alto * 0.3846, 10, 150, ArcType.OPEN);
                 gc.strokeArc(letra.getX() + ancho * 0.3272, letra.getY() + alto * 0.1230, ancho * 0.6363, alto * 0.8461, -210, 80, ArcType.OPEN);
@@ -1740,6 +1738,7 @@ public class FormulasLetras
             }else{ //letra normal
                 //TILDE
                 gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 5 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 5 + alto * 0.0307);                
+                gc.strokeArc(letra.getX() + ancho * 0.0727, letra.getY() + alto * 0.0923, ancho * 0.7272, alto * 0.8923, 85, 200, ArcType.OPEN); //Arcos
                 gc.strokeArc(letra.getX() + ancho * 0.1090, letra.getY() + alto * 0.1692, ancho * 0.7272, alto * 0.8000, 275, 130, ArcType.OPEN);
                 gc.strokeArc(letra.getX() + ancho * 0.3909, letra.getY() + alto * 0.1846, ancho * 0.3636, alto * 0.3846, 30, 150, ArcType.OPEN);
                 gc.strokeArc(letra.getX() + ancho * 0.3545, letra.getY() + alto * 0.1230, ancho * 0.6363, alto * 0.8461, -230, 80, ArcType.OPEN);
@@ -2351,10 +2350,11 @@ public class FormulasLetras
             }else{ //letra normal
                 //TILDE
                 gc.strokeLine(letra.getX() + ancho * 0.4000, letra.getY() + - 3 + alto * 0.0923, letra.getX() + ancho * 0.4909, letra.getY() + - 3 + alto * 0.0307);                
+                gc.strokeArc(letra.getX() + ancho * 0.0181, letra.getY() + alto * 0.1076, ancho * 0.2181, alto * 0.3076, 0, 170, ArcType.OPEN);//Arco
                 gc.strokeLine(letra.getX() + ancho * 0.2363, letra.getY() + alto * 0.3076, letra.getX() + ancho * 0.2363, letra.getY() + alto * 0.8000);//Línea
                 gc.strokeArc(letra.getX() + ancho * 0.2363, letra.getY() + alto * 0.6461, ancho * 0.4000, alto * 0.3076, 185, 170, ArcType.OPEN);//Arco
                 gc.strokeLine(letra.getX() + ancho * 0.6363, letra.getY() + alto * 0.1076, letra.getX() + ancho * 0.6363, letra.getY() + alto * 0.8000);//Línea
-                gc.strokeArc(letra.getX() + ancho * 0.6363, letra.getY() + alto * 0.6307, ancho * 0.3272, alto * 0.3384, 185, 170, ArcType.OPEN);//Arco 
+                gc.strokeArc(letra.getX() + ancho * 0.6363, letra.getY() + alto * 0.6307, ancho * 0.3272, alto * 0.3384, 185, 170, ArcType.OPEN);//Arco  
             }
             if (letra.getSubrayar())
             {

@@ -110,6 +110,7 @@ public class GraficadoraController implements Initializable
         Utilidades.limpiarCanvas(this.gc, this.canvas); //Limpia el canvas
         ArrayList<Abecedario> caracteres = new ArrayList<>();
         ArrayList<Abecedario> frase = new ArrayList<>(); //Frase ArrayList
+        
         int x = 0;
         int y = 0;
 
@@ -127,6 +128,8 @@ public class GraficadoraController implements Initializable
             int ancho = anchoAlto[0];
             int alto = anchoAlto[1];
             
+            y = Utilidades.moverCarTildes(caracter, y, x);
+            
             if ((caracter.equals("^") && dibujarTongo) || Utilidades.banderaEstilos || Utilidades.primerTongo){
                 x = Utilidades.dividirTexto(i, caracter, frase, caracteres, x, y, ancho, alto); //
             }
@@ -138,6 +141,8 @@ public class GraficadoraController implements Initializable
                 caracteres.add(caracterMomentaneo);
                 x += ancho;
             } 
+            //y = Utilidades.moverCarTildes(caracter, y);
+            //Utilidades.activarEstilos();
             
             if (x > 1150)
             {
