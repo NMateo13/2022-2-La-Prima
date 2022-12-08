@@ -127,6 +127,8 @@ public class GraficadoraController implements Initializable
             int ancho = anchoAlto[0];
             int alto = anchoAlto[1];
             
+            y = Utilidades.moverCarTildes(caracter, x, y);
+            
             if ((caracter.equals("^") && dibujarTongo) || Utilidades.banderaEstilos || Utilidades.primerTongo){
                 x = Utilidades.dividirTexto(i, caracter, frase, caracteres, x, y, ancho, alto); //
             }

@@ -105,17 +105,17 @@ public class Utilidades
         return anchoAlto;
     }
     
-   /* public static int moverCarTildes(String caracter, int y) //PROBANDO CODIGO
+    public static int moverCarTildes(String caracter, int x, int y) //PROBANDO CODIGO
     {
         if("Á".equals(caracter) || "É".equals(caracter)|| "Í".equals(caracter)
         || "Ó".equals(caracter) || "Ú".equals(caracter))
         {
-            if( x == 0 && y == 0){
+            if( x < 1150 && y == 0){
                 return y = y+5;
             }
         }
         return y;
-    } */
+    } 
     
 
     public static void resetearConfig()
