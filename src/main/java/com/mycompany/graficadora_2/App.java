@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollBar;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -30,6 +31,7 @@ public class App extends Application
         stage.setMinWidth(640);
         stage.setMinHeight(480);
         stage.centerOnScreen();
+
         
 
         

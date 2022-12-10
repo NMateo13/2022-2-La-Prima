@@ -16,6 +16,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.TextField;
+import static javafx.scene.input.KeyCode.N;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
@@ -33,7 +34,6 @@ public class GraficadoraController implements Initializable
     public static Boolean unaConfig;
     public static Boolean dosConfig;
     public static Boolean tresConfig;
-    public static Boolean dibujarTongo;
     public static Boolean banderaEstilos2 = false;
     
     @FXML
@@ -109,13 +109,15 @@ public class GraficadoraController implements Initializable
         Utilidades.texto = this.texto.getText();
         Utilidades.limpiarCanvas(this.gc, this.canvas); //Limpia el canvas
         ArrayList<Abecedario> caracteres = new ArrayList<>();
-        ArrayList<Abecedario> frase = new ArrayList<>(); //Frase ArrayList
+        ArrayList<String> frase = new ArrayList<>(); //Frase ArrayList
+        ArrayList<Abecedario> estilos = new ArrayList<>();
+        ArrayList<Abecedario> palabra = new ArrayList<>();
+        
         int x = 0;
         int y = 0;
 
         for (int i = 0; i < Utilidades.texto.length(); i++)
         {
-            dibujarTongo = true;
             String caracter = String.valueOf(Utilidades.texto.charAt(i)); //crea y recibe el caracter correspondiente
 
             //pregunta si es un tongo para saber si es negrita subrayado o cursiva
@@ -129,8 +131,9 @@ public class GraficadoraController implements Initializable
             
             y = Utilidades.moverCarTildes(caracter, x, y);
             
-            if ((caracter.equals("^") && dibujarTongo) || Utilidades.banderaEstilos || Utilidades.primerTongo){
-                x = Utilidades.dividirTexto(i, caracter, frase, caracteres, x, y, ancho, alto); //
+            if ((caracter.equals("^") && Utilidades.dibujarTongo) || Utilidades.banderaEstilos || Utilidades.primerTongo){
+                x = Utilidades.dividirTexto(i, caracter, frase, caracteres, x, y, ancho, alto, estilos, palabra); //
+                i = Utilidades.EstilosBasicos(i, caracter, x, y, caracteres);
             }
             else if (!"^".equals(caracter) && !"0".equals(caracter) && !"1".equals(caracter) && !"2".equals(caracter)
             && !"3".equals(caracter) && !"4".equals(caracter) && !"5".equals(caracter) && !Utilidades.banderaEstilos
@@ -140,6 +143,8 @@ public class GraficadoraController implements Initializable
                 caracteres.add(caracterMomentaneo);
                 x += ancho;
             } 
+            
+                
             
             if (x > 1150)
             {
@@ -268,7 +273,10 @@ public class GraficadoraController implements Initializable
         }
         else if (caracter.getCaracter().equals("^"))
         {
-            FormulasSimbolos.acentoCircunflejo(this.gc, caracter);
+            if(Utilidades.dibujarTongo)
+            {
+                FormulasSimbolos.acentoCircunflejo(this.gc, caracter);
+            }
         }
         else if (caracter.getCaracter().equals("+"))
         {
