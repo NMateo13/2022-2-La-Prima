@@ -31,7 +31,7 @@ public class GraficadoraController implements Initializable
     @FXML
     private ColorPicker selectorColor;
     public static GraphicsContext gc;
-    public static Boolean unaConfig;
+    public static Boolean unaConfig = false;
     public static Boolean dosConfig;
     public static Boolean tresConfig;
     public static Boolean banderaEstilos2 = false;
@@ -121,9 +121,6 @@ public class GraficadoraController implements Initializable
             String caracter = String.valueOf(Utilidades.texto.charAt(i)); //crea y recibe el caracter correspondiente
 
             //pregunta si es un tongo para saber si es negrita subrayado o cursiva
-            unaConfig = false;
-            dosConfig = false;
-            tresConfig = false;
             
             int[] anchoAlto = Utilidades.anchoAltoLetra(Utilidades.tipoCaracter(caracter), Utilidades.tamCaracter);
             int ancho = anchoAlto[0];
@@ -131,18 +128,31 @@ public class GraficadoraController implements Initializable
             
             y = Utilidades.moverCarTildes(caracter, x, y);
             
-            if ((caracter.equals("^") && Utilidades.dibujarTongo) || Utilidades.banderaEstilos || Utilidades.primerTongo){
-                x = Utilidades.dividirTexto(i, caracter, frase, caracteres, x, y, ancho, alto, estilos, palabra); //
-                i = Utilidades.EstilosBasicos(i, caracter, x, y, caracteres);
-            }
-            else if (!"^".equals(caracter) && !"0".equals(caracter) && !"1".equals(caracter) && !"2".equals(caracter)
-            && !"3".equals(caracter) && !"4".equals(caracter) && !"5".equals(caracter) && !Utilidades.banderaEstilos
-            )
+            if (!"^".equals(caracter) && !"0".equals(caracter) && !"1".equals(caracter) && !"2".equals(caracter)
+            && !"3".equals(caracter) && !"4".equals(caracter) && !"5".equals(caracter))
             {
                 Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
                 caracteres.add(caracterMomentaneo);
                 x += ancho;
-            } 
+            }else
+            {
+                Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                caracteres.add(caracterMomentaneo);
+                i = Utilidades.EstilosBasicos(i, caracter, caracteres, x, y);
+            }
+                
+            
+            
+            /*if (caracter.equals("^")){
+                x = Utilidades.dividirTexto(i, caracter, frase, caracteres, x, y, ancho, alto, estilos, palabra); //
+                i = Utilidades.EstilosBasicos(i, caracter, caracteres);
+            }
+            else if (!"^".equals(caracter)  && !Utilidades.banderaEstilos)
+            {
+                Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
+                caracteres.add(caracterMomentaneo);
+                x += ancho;
+            }*/ 
             
                 
             
@@ -160,6 +170,7 @@ public class GraficadoraController implements Initializable
                 x = 0;
             }
         }
+
         Utilidades.frase = caracteres;
         pintar();
     }

@@ -23,11 +23,12 @@ public class Utilidades
     public static Boolean primerTongo = false;
     public static Boolean puntosDeControl = false;
     public static Boolean sepEstilos = false;
-        public static Boolean guion = false;
+    public static Boolean guion = false;
     public static Boolean sepPalabras = false;
     public static Boolean banderaEstilos = false; 
     public static Boolean dibujarTongo = true;
     public static Boolean dibujoSigla = true;
+    public static Boolean combinacionEstilos = false;
     
     public static int[] tamCanvas = new int[2];
     public static String texto = "";
@@ -137,11 +138,11 @@ public class Utilidades
     {
         if (caracter.equals("^") && i != Utilidades.texto.length() || primerTongo) //Compara el largo del TEXTO
         {
-            primerTongo = true;
-            banderaEstilos = true; 
             
             if("^".equals(caracter))
             {
+                primerTongo = true;
+                banderaEstilos = true; 
                 Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
                 caracteres.add(caracterMomentaneo);
             }
@@ -170,122 +171,105 @@ public class Utilidades
         return x;
     }
     
-   public static int EstilosBasicos(int i, String caracter, int x, int y, ArrayList caracteres)
-    {   
-        if ("^".equals(caracter))
-        {
-            if ((i+1) < Utilidades.texto.length())
-            {
-                String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(i + 1));
-                switch(selectorPostTongo)
-                {
-                    case "N":
-                        
-                        Utilidades.desactivarEstilos(caracter);
-
-                        Utilidades.negrita = true;
-                        dibujarTongo = false;
-                        GraficadoraController.unaConfig = true;
-                        return i += 1;
-                       
-                    case "S":
-                        
-                        Utilidades.desactivarEstilos(caracter);
-
-                        Utilidades.subrayado = true;
-                        dibujarTongo = false;
-                        GraficadoraController.unaConfig = true;
-                        return i += 1;
-                    
-                    case "K":
-                        
-                        Utilidades.desactivarEstilos(caracter);
-
-                        Utilidades.cursiva = true;
-                        dibujarTongo = false;
-                        GraficadoraController.unaConfig = true;
-                        return i += 1;
-                    
-                    default:
-                        break;
-                }
-                return i;
-            }
-                
-        }    
+   public static int EstilosBasicos(int i, String caracter, ArrayList caracteres, int x, int y)
+    {
+        primerTongo = true;
         
-        /*if (primerTongo)
+        if ((i+3) < Utilidades.texto.length())
         {
-            if ((i+1) < Utilidades.texto.length())
-            {
-                String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(i + 1));
-                switch(selectorPostTongo)
+            for (int j = i; j <= caracteres.size()+1; j++) {
+                String selectorAux;
+                if(GraficadoraController.unaConfig == true){
+                    selectorAux = String.valueOf(Utilidades.texto.charAt(caracteres.size()+1));
+                }else
                 {
-                    case "N":
-                        Utilidades.desactivarEstilos(caracter);
-                        System.out.println("Hola");
-                        Utilidades.negrita = true;
-                        Utilidades.dibujarTongo = false;
-                        GraficadoraController.unaConfig = true;
-                        return i += 1;
-                    default:
-                        return i;
-                }
-            }
-        }*/
-           
-        return i;
-        
-    }
+                    selectorAux = String.valueOf(Utilidades.texto.charAt(i+2));
+                }    
 
-    /*public static int unEstilo(int i, String caracter)
-   {
-        //ESTILO SOLO
-        if ((i + 1) < Utilidades.texto.length() && !GraficadoraController.dosConfig
-           && !GraficadoraController.tresConfig)
+                if ("+".equals(selectorAux))
+                {
+                    combinacionEstilos = true;
+                    String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(j+1));
+
+                    switch(selectorPostTongo)
+                    {
+                        case "N":
+
+                            Utilidades.negrita = true;
+                            dibujarTongo = false;
+                            GraficadoraController.unaConfig = true;
+                            i += 1;
+                            break;
+
+                        case "S":
+
+                            Utilidades.subrayado = true;
+                            dibujarTongo = false;
+                            GraficadoraController.unaConfig = true;
+                            i += 1;
+                            break;
+
+                        case "K":
+
+                            Utilidades.cursiva = true;
+                            dibujarTongo = false;
+                            GraficadoraController.unaConfig = true;
+                            i += 1;
+                            break;
+
+                        case "+":
+                            
+                            i += 1;
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+            }  
+        }
+        
+        if ((i+1) < Utilidades.texto.length() && !combinacionEstilos)
         {
             String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(i + 1));
-            System.out.println("selectorPostTongo: " + selectorPostTongo);
-            if (selectorPostTongo.equals("N"))
+            
+            switch(selectorPostTongo)
             {
+                case "N":
+                    
+                    Utilidades.desactivarEstilos(caracter);
 
-                Utilidades.desactivarEstilos(caracter);
+                    Utilidades.negrita = true;
+                    dibujarTongo = false;
+                    GraficadoraController.unaConfig = true;
+                    return i += 1;
 
-                Utilidades.negrita = true;
-                GraficadoraController.dibujarTongo = false;
-                GraficadoraController.unaConfig = true;
-                return i += 2;
-            }
-            else if (selectorPostTongo.equals("S"))
-            {
-                Utilidades.desactivarEstilos(caracter);
+                case "S":
 
-                Utilidades.subrayado = true;
-                GraficadoraController.dibujarTongo = false;
-                GraficadoraController.unaConfig = true;
-                return i += 1;
-            }
-            else if (selectorPostTongo.equals("K"))
-            {
-                Utilidades.desactivarEstilos(caracter);
+                    Utilidades.desactivarEstilos(caracter);
 
-                Utilidades.cursiva = true;
-                GraficadoraController.dibujarTongo = false;
-                GraficadoraController.unaConfig = true;
-                return i += 1;
-            }
-            else if (selectorPostTongo.equals("R"))
-            {
+                    Utilidades.subrayado = true;
+                    dibujarTongo = false;
+                    GraficadoraController.unaConfig = true;
+                    return i += 1;
 
-                GraficadoraController.dibujarTongo = false;
-                return i+=1;
+                case "K":
+
+                    Utilidades.desactivarEstilos(caracter);
+
+                    Utilidades.cursiva = true;
+                    dibujarTongo = false;
+                    GraficadoraController.unaConfig = true;
+                    return i += 1;
+
+                default:
+                    break;
             }
         }
-        return i; 
-   }    */    
-    
-    
-    
+        
+        return i;
+    }
+
     public static void desactivarEstilos(String caracter)
     {
         //preguntar si es un espacio para desactivar negrita subrayado o cursiva.
