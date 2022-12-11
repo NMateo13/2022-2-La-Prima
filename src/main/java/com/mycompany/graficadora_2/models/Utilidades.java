@@ -47,7 +47,8 @@ public class Utilidades
     public static int tamCaracter = 0;
     public static int aux = 0;
     public static int inicio = 2;
-    public static int contador = 1;
+    public static int contador = 0;
+    
                     public static List<String> palabras = new ArrayList<>();
     
     GraficadoraController pizarra = new GraficadoraController();
@@ -172,63 +173,7 @@ public class Utilidades
     }
     
    public static int EstilosBasicos(int i, String caracter, ArrayList caracteres, int x, int y)
-    {
-        primerTongo = true;
-        
-        if ((i+3) < Utilidades.texto.length())
-        {
-            for (int j = i; j <= caracteres.size()+1; j++) {
-                String selectorAux;
-                if(GraficadoraController.unaConfig == true){
-                    selectorAux = String.valueOf(Utilidades.texto.charAt(caracteres.size()+1));
-                }else
-                {
-                    selectorAux = String.valueOf(Utilidades.texto.charAt(i+2));
-                }    
-
-                if ("+".equals(selectorAux))
-                {
-                    combinacionEstilos = true;
-                    String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(j+1));
-
-                    switch(selectorPostTongo)
-                    {
-                        case "N":
-
-                            Utilidades.negrita = true;
-                            dibujarTongo = false;
-                            GraficadoraController.unaConfig = true;
-                            i += 1;
-                            break;
-
-                        case "S":
-
-                            Utilidades.subrayado = true;
-                            dibujarTongo = false;
-                            GraficadoraController.unaConfig = true;
-                            i += 1;
-                            break;
-
-                        case "K":
-
-                            Utilidades.cursiva = true;
-                            dibujarTongo = false;
-                            GraficadoraController.unaConfig = true;
-                            i += 1;
-                            break;
-
-                        case "+":
-                            
-                            i += 1;
-                            break;
-
-                        default:
-                            break;
-                    }
-                }
-            }  
-        }
-        
+    {   
         if ((i+1) < Utilidades.texto.length() && !combinacionEstilos)
         {
             String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(i + 1));
@@ -266,9 +211,70 @@ public class Utilidades
                     break;
             }
         }
-        
         return i;
     }
+   
+   public static int combinacionEstilos(int i, ArrayList caracteres, int contador, String caracter){
+       
+        if ((i+3) < Utilidades.texto.length() && "^".equals(caracter))
+        {
+            Utilidades.desactivarEstilos(caracter);
+            for (int j = 0; j <= 2; j++)
+            {
+                
+                String selectorAux = String.valueOf(Utilidades.texto.charAt(j));
+                  
+                if ("+".equals(selectorAux) && i <= caracteres.size()+2)
+                {
+                    combinacionEstilos = true;
+                    String selectorPostTongo = String.valueOf(Utilidades.texto.charAt(i+1));
+
+                    switch(selectorPostTongo)
+                    {
+                        case "N":
+
+                            Utilidades.negrita = true;
+                            dibujarTongo = false;
+                            GraficadoraController.dosConfig = true;
+                            i += 1;
+                            j = 0;
+                            break;
+
+                        case "S":
+
+                            Utilidades.subrayado = true;
+                            dibujarTongo = false;
+                            GraficadoraController.dosConfig = true;
+                            i += 1;
+                            j = 0;
+                            break;
+
+                        case "K":
+
+                            Utilidades.cursiva = true;
+                            dibujarTongo = false;
+                            GraficadoraController.dosConfig = true;
+                            i += 1;
+                            j = 0;
+                            break;
+
+                        case "+":
+                            
+                            i += 1;
+                            j = 0;
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+            }  
+            primerTongo = false;
+            combinacionEstilos = false;
+        } else {
+        }
+        return i;
+   }
 
     public static void desactivarEstilos(String caracter)
     {

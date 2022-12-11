@@ -5,6 +5,7 @@ import com.mycompany.graficadora_2.models.Abecedario;
 import com.mycompany.graficadora_2.models.FormulasLetras;
 import com.mycompany.graficadora_2.models.FormulasSimbolos;
 import com.mycompany.graficadora_2.models.Utilidades;
+import static com.mycompany.graficadora_2.models.Utilidades.primerTongo;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -115,6 +116,7 @@ public class GraficadoraController implements Initializable
         
         int x = 0;
         int y = 0;
+        int contador = 1;
 
         for (int i = 0; i < Utilidades.texto.length(); i++)
         {
@@ -128,33 +130,18 @@ public class GraficadoraController implements Initializable
             
             y = Utilidades.moverCarTildes(caracter, x, y);
             
-            if (!"^".equals(caracter) && !"0".equals(caracter) && !"1".equals(caracter) && !"2".equals(caracter)
-            && !"3".equals(caracter) && !"4".equals(caracter) && !"5".equals(caracter))
-            {
-                Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                caracteres.add(caracterMomentaneo);
-                x += ancho;
-            }else
-            {
-                Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
-                caracteres.add(caracterMomentaneo);
+            if (caracter.equals("^")){
+                Utilidades.primerTongo = true;
+                i = Utilidades.combinacionEstilos(i, caracteres, contador, caracter);
                 i = Utilidades.EstilosBasicos(i, caracter, caracteres, x, y);
-            }
-                
-            
-            
-            /*if (caracter.equals("^")){
-                x = Utilidades.dividirTexto(i, caracter, frase, caracteres, x, y, ancho, alto, estilos, palabra); //
-                i = Utilidades.EstilosBasicos(i, caracter, caracteres);
             }
             else if (!"^".equals(caracter)  && !Utilidades.banderaEstilos)
             {
+                Utilidades.contador += 1;
                 Abecedario caracterMomentaneo = new Abecedario(caracter, Utilidades.tipoCaracter(caracter), x, y, Utilidades.negrita, Utilidades.subrayado, Utilidades.cursiva, Utilidades.tamCaracter);
                 caracteres.add(caracterMomentaneo);
                 x += ancho;
-            }*/ 
-            
-                
+            }
             
             if (x > 1150)
             {
@@ -170,7 +157,6 @@ public class GraficadoraController implements Initializable
                 x = 0;
             }
         }
-
         Utilidades.frase = caracteres;
         pintar();
     }
